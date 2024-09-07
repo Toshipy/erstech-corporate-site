@@ -6,21 +6,23 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint --ext .tsx, .ts, ",
+    "test": "jest"
   },
   "dependencies": {
+    "next": "14.2.8",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.8"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^9.10.0",
+    "eslint-config-next": "14.2.8",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.8"
-  }
+    "typescript": "^5"
+  },
+  "packageManager": "yarn@3.8.3+sha512.154080e749d50325f4df31bc341cd5ea2dc2c3ca9b2cfb8591c831ddefc8025084d9500223f61f4f73086f6d9faa746cbbf39bb988b41dfc042907687e8e7d7a"
 }

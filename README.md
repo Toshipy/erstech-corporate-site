@@ -22,3 +22,23 @@
 | ref/XXX    | リファクタリング用ブランチ                         |
 | fix/XXX    | バグ修正用ブランチ                                 |
 | hotfix/XXX | 本番環境で発生している緊急バグ修正用ブランチ       |
+
+## Install
+
+### yarn
+
+```
+yarn install
+```
+
+### Jest
+
+```
+yarn create jest@latest
+```
+
+### ESLint
+
+```
+yarn add -D eslint
+```
