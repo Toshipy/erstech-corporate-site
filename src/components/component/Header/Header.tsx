@@ -1,3 +1,5 @@
+'use client'
+
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -9,15 +11,9 @@ import {
 } from '@/components'
 import Link from 'next/link'
 
-import {
-  ERSTECH_ROUTES,
-  HOME,
-  ABOUT,
-  SERVICE,
-  RECRUIT,
-  BLOG,
-  CONTACT,
-} from '@/contants'
+import { ERSTECH_ROUTES, HOME } from '@/contants'
+
+import { ModeToggle } from '@/components'
 
 export const Header = () => {
   return (
@@ -39,6 +35,9 @@ export const Header = () => {
               </Link>
             </NavigationMenuItem>
           ))}
+          <NavigationMenuItem>
+            <ModeToggle />
+          </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
     </header>

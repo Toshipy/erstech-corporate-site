@@ -115,3 +115,21 @@ npx shadcn@latest add navigation-menu
 ```
 npx shadcn@latest add scroll-area
 ```
+
+- Dark mode: https://ui.shadcn.com/docs/dark-mode/next
+
+```
+yarn add next-themes
+```
+
+- Dropdown menu: https://ui.shadcn.com/docs/components/dropdown-menu
+
+```
+npx shadcn@latest add dropdown-menu
+```
+
+- Button: https://ui.shadcn.com/docs/components/button
+
+```
+npx shadcn@latest add button
+```
