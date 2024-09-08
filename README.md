@@ -77,6 +77,12 @@ yarn create jest@latest
 yarn add -D eslint
 ```
 
+### Prettier
+```
+yarn add -D prettier
+yarn add -D prettier-plugin-tailwindcss
+```
+
 ### Storybook
 
 ```

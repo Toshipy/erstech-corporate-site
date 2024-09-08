@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "prettier -c src/**/*.{ts.tsx} && next lint",
+    "lint": "next lint",
+    "format": "prettier -c src/**/*.{ts,tsx}",
+    "format:fix": "prettier --write \"./**/*.ts\" \"./**/*.tsx\"",
+    "typecheck": "tsc --noEmit",
+    "checkall": "yarn typecheck && yarn format && yarn lint",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -44,7 +48,7 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
-  "packageManager": "yarn@3.8.3+sha512.154080e749d50325f4df31bc341cd5ea2dc2c3ca9b2cfb8591c831ddefc8025084d9500223f61f4f73086f6d9faa746cbbf39bb988b41dfc042907687e8e7d7a",
+  "packageManager": "yarn@3.8.3",
   "eslintConfig": {
     "extends": [
       "plugin:storybook/recommended"
