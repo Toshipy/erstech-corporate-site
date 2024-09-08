@@ -50,3 +50,10 @@ npx storybook@latest init
 yarn storybook
 open http://localhost:6006/
 ```
+
+### Vercel
+
+```
+yarn dlx vercel
+
+```
