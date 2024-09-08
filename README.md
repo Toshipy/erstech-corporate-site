@@ -63,6 +63,7 @@
 
 ```
 yarn install
+yarn add -D @types/react
 ```
 
 ### Jest
