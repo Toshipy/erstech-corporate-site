@@ -1,9 +1,10 @@
-import { Header } from '@/components/component/Header'
+import { Header, HomePage } from '@/components'
 
 export default function Home() {
   return (
     <>
       <Header />
+      <HomePage />
     </>
   )
 }

@@ -102,8 +102,16 @@ yarn dlx vercel
 
 ### shadcn ui libraries
 
-https://ui.shadcn.com/docs/components/navigation-menu
+- Navigation Menu:
+  https://ui.shadcn.com/docs/components/navigation-menu
 
 ```
 npx shadcn@latest add navigation-menu
+```
+
+- Scroll Area:
+  https://ui.shadcn.com/docs/components/scroll-area
+
+```
+npx shadcn@latest add scroll-area
 ```
