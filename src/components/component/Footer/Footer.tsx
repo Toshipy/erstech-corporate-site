@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
         <ul className="space-y-2">
           {ERSTECH_ROUTES.map((route) => (
             <li key={route.href}>
-              <Button variant="destructive">
+              <Button variant="ghost">
                 <Link href={route.href}>
                   <Typography>{route.label}</Typography>
                 </Link>
