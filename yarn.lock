@@ -6205,6 +6205,7 @@ __metadata:
     prettier-plugin-tailwindcss: ^0.6.6
     react: ^18
     react-dom: ^18
+    remixicon: ^4.3.0
     storybook: ^8.2.9
     tailwind-merge: ^2.5.2
     tailwindcss: ^3.4.1
@@ -10755,6 +10756,13 @@ __metadata:
   version: 0.2.7
   resolution: "relateurl@npm:0.2.7"
   checksum: 5891e792eae1dfc3da91c6fda76d6c3de0333a60aa5ad848982ebb6dccaa06e86385fb1235a1582c680a3d445d31be01c6bfc0804ebbcab5aaf53fa856fde6b6
+  languageName: node
+  linkType: hard
+
+"remixicon@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "remixicon@npm:4.3.0"
+  checksum: bdce2fadea276f0cc46640e62bbd55cbd0f73227debeaaa185223bf86be6815a4a3f78f3b8a889047ac9c03d1fae6a484a25b22ca0452441b7940895583df0c2
   languageName: node
   linkType: hard
 
