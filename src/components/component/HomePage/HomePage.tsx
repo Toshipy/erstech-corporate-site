@@ -4,7 +4,7 @@ import { ScrollArea } from '@/components'
 export const HomePage = () => {
   return (
     <ScrollArea>
-      <div>test</div>
+      <div className="bg-background hover:bg-accent">Hover me!</div>
     </ScrollArea>
   )
 }

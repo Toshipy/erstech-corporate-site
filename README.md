@@ -133,3 +133,11 @@ npx shadcn@latest add dropdown-menu
 ```
 npx shadcn@latest add button
 ```
+
+### Icons
+
+- Remixicon: https://classic.yarnpkg.com/en/package/remixicon
+
+```
+yarn add remixicon
+```
