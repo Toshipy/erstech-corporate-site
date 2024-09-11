@@ -11,6 +11,8 @@ import {
   BLOG,
 } from '@/contants'
 
+import { Button, Typography } from '@/components'
+
 export const Footer: React.FC = () => {
   return (
     <footer className="h-30 container sticky top-full flex justify-between border-t py-5">
@@ -21,24 +23,15 @@ export const Footer: React.FC = () => {
       <div>
         <h2 className="mb-4 text-lg font-semibold">MENU</h2>
         <ul className="space-y-2">
-          <li>
-            <Link href={`${HOME}`}>Home</Link>
-          </li>
-          <li>
-            <Link href={`${ABOUT}`}>About</Link>
-          </li>
-          <li>
-            <Link href={`${SERVICE}`}>Service</Link>
-          </li>
-          <li>
-            <Link href={`${RECRUIT}`}>Recruit</Link>
-          </li>
-          <li>
-            <Link href={`${BLOG}`}>Blog</Link>
-          </li>
-          <li>
-            <Link href={`${CONTACT}`}>Contact</Link>
-          </li>
+          {ERSTECH_ROUTES.map((route) => (
+            <li key={route.href}>
+              <Button variant="ghost">
+                <Link href={route.href}>
+                  <Typography>{route.label}</Typography>
+                </Link>
+              </Button>
+            </li>
+          ))}
         </ul>
       </div>
       <div>
