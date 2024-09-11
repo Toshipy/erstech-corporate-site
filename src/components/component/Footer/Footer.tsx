@@ -1,31 +1,26 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import 'remixicon/fonts/remixicon.css'
-import {
-  ERSTECH_ROUTES,
-  HOME,
-  ABOUT,
-  SERVICE,
-  RECRUIT,
-  CONTACT,
-  BLOG,
-} from '@/contants'
+import { Logo } from '@/components'
+import { ERSTECH_ROUTES, HOME } from '@/contants'
 
 import { Button, Typography } from '@/components'
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="h-30 container sticky top-full flex justify-between border-t py-5">
+    <footer className="top-full flex w-full justify-between border-t-2 p-4">
       <div>
-        <Image src="" alt="logo" width={100} height={100} layout="intrinsic" />
+        <Link href={`${HOME}`}>
+          <Logo height={25} width={116} />
+        </Link>
         <p>&copy; Erstech Corporation. All rigths reserved.</p>
       </div>
-      <div>
-        <h2 className="mb-4 text-lg font-semibold">MENU</h2>
+      <div className="flex flex-col items-center space-y-2">
+        <Typography variant="xl">MENU</Typography>
         <ul className="space-y-2">
           {ERSTECH_ROUTES.map((route) => (
             <li key={route.href}>
-              <Button variant="ghost">
+              <Button variant="destructive">
                 <Link href={route.href}>
                   <Typography>{route.label}</Typography>
                 </Link>
@@ -34,9 +29,9 @@ export const Footer: React.FC = () => {
           ))}
         </ul>
       </div>
-      <div>
-        <h2 className="mb-4 text-lg font-semibold">SOCIAL</h2>
-        <ul className="flex space-x-6">
+      <div className="flex flex-col items-center space-y-2">
+        <Typography variant="xl">SOCIAL</Typography>
+        <ul className="flex flex-col space-y-2">
           <li>
             <Link href="https://github.com/{GitHubName}">
               <i className="ri-github-fill text-4xl"></i>
