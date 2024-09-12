@@ -141,3 +141,9 @@ npx shadcn@latest add button
 ```
 yarn add remixicon
 ```
+
+- Accordion: https://ui.shadcn.com/docs/components/accordion
+
+```
+npx shadcn@latest add accordion
+```

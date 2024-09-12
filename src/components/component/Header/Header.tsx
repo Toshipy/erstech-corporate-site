@@ -17,7 +17,7 @@ import { ModeToggle } from '@/components'
 
 export const Header = () => {
   return (
-    <header className="flex items-center justify-between border-b-2 p-4">
+    <header className="flex items-center justify-between border-b-2 px-4 py-1">
       <div className="flex items-center">
         <Link href={`${HOME}`}>
           <Logo height={25} width={116} />

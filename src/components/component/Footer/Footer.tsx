@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
     <footer className="top-full flex w-full justify-between border-t-2 p-4">
       <div>
         <Link href={`${HOME}`}>
-          <Image src="/daiana_logo.png" alt="logo" width={200} height={200}/>
+          <Image src="/daiana_logo.png" alt="logo" width={200} height={200} />
         </Link>
         <p>&copy; Erstech Corporation. All rigths reserved.</p>
       </div>
@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
         <ul className="space-y-2">
           {ERSTECH_ROUTES.map((route) => (
             <li key={route.href}>
-              <Button variant="destructive">
+              <Button variant="ghost">
                 <Link href={route.href}>
                   <Typography>{route.label}</Typography>
                 </Link>
