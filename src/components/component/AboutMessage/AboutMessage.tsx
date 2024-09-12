@@ -12,9 +12,11 @@ export const AboutMessage: React.FC = () => {
   return (
     <div className="p-12">
       <div>
-        <Link href={`${HOME}`}>HOME </Link>
+        <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
         &gt;
-        <Link href={`${ABOUT}`}> ABOUT</Link>
+        <Link href={`${ABOUT}`} className="font-bold">
+          &nbsp;&nbsp;About
+        </Link>
       </div>
       <div className="relative w-full p-12">
         <Typography className="text-gray-400" variant="6xl">
