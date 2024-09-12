@@ -3,7 +3,7 @@ import {
   Footer,
   AboutMessage,
   CompanyAbout,
-  CeoMessage,
+  Team,
 } from '@/components'
 import React from 'react'
 
@@ -13,7 +13,7 @@ const page = () => {
       <Header />
       <AboutMessage />
       <CompanyAbout />
-      <CeoMessage />
+      <Team />
       <Footer />
     </>
   )
