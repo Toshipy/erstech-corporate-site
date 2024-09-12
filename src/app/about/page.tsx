@@ -1,11 +1,19 @@
-import { Header, Footer, AboutPage } from '@/components'
+import {
+  Header,
+  Footer,
+  AboutMessage,
+  CompanyAbout,
+  CeoMessage,
+} from '@/components'
 import React from 'react'
 
 const page = () => {
   return (
     <>
       <Header />
-      <AboutPage />
+      <AboutMessage />
+      <CompanyAbout />
+      <CeoMessage />
       <Footer />
     </>
   )

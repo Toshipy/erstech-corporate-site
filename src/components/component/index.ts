@@ -1,4 +1,6 @@
-export * from './AboutPage'
+export * from './AboutMessage'
+export * from './CeoMessage'
+export * from './CompanyAbout'
 export * from './Header'
 export * from './HomePage'
 export * from './Footer'
