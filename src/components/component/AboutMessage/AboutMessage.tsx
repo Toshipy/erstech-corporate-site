@@ -10,36 +10,36 @@ import {
 
 export const AboutMessage: React.FC = () => {
   return (
-    <div className="p-4">
+    <div className="p-12">
       <div>
         <Link href={`${HOME}`}>HOME </Link>
         &gt;
         <Link href={`${ABOUT}`}> ABOUT</Link>
       </div>
-      <div className="relative w-full p-4">
+      <div className="relative w-full p-12">
         <Typography className="text-gray-400" variant="6xl">
           Who we are
         </Typography>
       </div>
-      <div className="p-4">
+      <div className="px-12">
         <Typography variant="3xl">
           人々の体験に新しい価値を提供します。
         </Typography>
       </div>
-      <div className="p-4">
+      <div className="p-12">
         <Typography variant="lg">
           クライアントが抱えている問題から背景を深く理解し、ビジネスの本質、業界について探究します。分析を踏まえ、使いやすくシンプルなデザインをソフトウェアで実現し、クライアントの成長につながる新たな価値を提供します。
         </Typography>
       </div>
-      <div className="relative w-full p-4">
+      <div className="relative w-full p-12">
         <Typography className="text-gray-400" variant="6xl">
           Our mission
         </Typography>
       </div>
-      <div className="px-4">
+      <div className="px-12">
         <Typography variant="3xl">アイデアをシンプルに表現する</Typography>
       </div>
-      <div className="container mx-auto py-6">
+      <div className="container mx-auto px-12 py-6">
         <Accordion type="single" collapsible>
           <AccordionItem value="user-centered design">
             <div className="flex flex-col">
