@@ -22,6 +22,7 @@ import {
   SiPython,
   SiReact,
   SiSlack,
+  SiSpringboot,
   SiTerraform,
   SiTrello,
   SiTypescript,
@@ -30,16 +31,10 @@ import {
 
 export const TechnologyStacks = () => {
   return (
-    <ScrollArea className="h-full w-full bg-background p-12">
-      <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
-      &gt;
-      <Link href={`${SERVICE}`} className="font-bold">
-        &nbsp;&nbsp;Service
-      </Link>
+    <ScrollArea className="h-full w-full bg-background px-12">
       <div className="px-12 pt-12">
         <Typography variant="4xl">TechnologyStacks</Typography>
-
-        <div className="mt-4 grid grid-cols-2 gap-6">
+        <div className="mt-4 grid grid-cols-2 gap-6 py-6">
           <div className="rounded-lg bg-gray-800 p-4 shadow-lg">
             <Typography
               variant="xl"
@@ -94,6 +89,10 @@ export const TechnologyStacks = () => {
               <div className="flex flex-col items-center">
                 <SiNodedotjs className="bg-none text-white" size={40} />
                 <span className="mt-2 text-white">Node.js</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <SiSpringboot className="bg-none text-white" size={40} />
+                <span className="mt-2 text-white">SpringBoot</span>
               </div>
             </div>
           </div>
