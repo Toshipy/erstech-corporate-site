@@ -3,12 +3,12 @@
 import { useContactForm } from '@/components/component/ContactForm/useContactForm'
 import { InputForm, SelectForm, TextareaForm } from '@/components/index'
 
-import { Typography, Form, ScrollArea } from '@/components/ui'
+import { Typography, Form, ScrollArea, Button } from '@/components/ui'
 import Link from 'next/link'
 import { HOME, CONTACT } from '@/contants'
 
 export const ContactForm: React.FC = () => {
-  const { form, onSubmit } = useContactForm()
+  const { form, onSubmit, isSubmitting, isValid, isDirty } = useContactForm()
   return (
     <ScrollArea className="h-full w-full bg-background p-12">
       <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
@@ -20,13 +20,13 @@ export const ContactForm: React.FC = () => {
         <Typography variant="4xl">Contact us</Typography>
       </div>
       <div className="flex justify-center">
-        <div className="w-full max-w-[600px] flex-col items-center gap-8">
-          <div className="h-full w-full py-11">
-            <Form {...form}>
-              <form
-                className="flex flex-col"
-                onSubmit={form.handleSubmit(onSubmit)}
-              >
+        <Form {...form}>
+          <form
+            className="flex flex-col"
+            onSubmit={form.handleSubmit(onSubmit)}
+          >
+            <div className="w-full max-w-[600px] flex-col items-center gap-8">
+              <div className="h-full w-full py-11">
                 <SelectForm
                   control={form.control}
                   label="お問い合わせ種別"
@@ -61,10 +61,21 @@ export const ContactForm: React.FC = () => {
                     required
                   />
                 </div>
-              </form>
-            </Form>
-          </div>
-        </div>
+              </div>
+            </div>
+            <div className="flex justify-center py-5">
+              <Button
+                disabled={isSubmitting || !isValid || !isDirty}
+                className="w-[200px] rounded-lg py-5"
+                variant="default"
+                size="default"
+                type="submit"
+              >
+                送信
+              </Button>
+            </div>
+          </form>
+        </Form>
       </div>
     </ScrollArea>
   )
