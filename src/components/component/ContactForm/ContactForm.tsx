@@ -4,12 +4,19 @@ import { useContactForm } from '@/components/component/ContactForm/useContactFor
 import { InputForm, SelectForm, TextareaForm } from '@/components/index'
 
 import { Typography, Form, ScrollArea } from '@/components/ui'
+import Link from 'next/link'
+import { HOME, CONTACT } from '@/contants'
 
 export const ContactForm: React.FC = () => {
   const { form, onSubmit } = useContactForm()
   return (
-    <ScrollArea className="h-full w-full bg-background px-6 py-10">
-      <div className="px-12">
+    <ScrollArea className="h-full w-full bg-background p-12">
+      <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
+      &gt;
+      <Link href={`${CONTACT}`} className="font-bold">
+        &nbsp;&nbsp;Contact
+      </Link>
+      <div className="px-12 pt-12">
         <Typography variant="4xl">Contact us</Typography>
       </div>
       <div className="flex justify-center">

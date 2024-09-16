@@ -44,7 +44,7 @@ export const SelectForm = <TFieldValues extends FieldValues>({
           <FormItem>
             <FormControl>
               <Select value={field.value} onValueChange={field.onChange}>
-                <SelectTrigger className="w-[300px]">
+                <SelectTrigger className="w-[500px]">
                   <SelectValue placeholder={placeholder} />
                 </SelectTrigger>
                 <SelectContent>
