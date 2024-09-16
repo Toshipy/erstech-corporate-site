@@ -158,6 +158,12 @@ yarn add zod
 npx shadcn@latest add input
 ```
 
+- Toast: https://ui.shadcn.com/docs/components/toast
+
+```
+npx shadcn@latest add toast
+```
+
 ### Icons
 
 - Remixicon: https://classic.yarnpkg.com/en/package/remixicon
