@@ -12,9 +12,20 @@ const formSchema = ContactMessage.pick({
 })
 
 type FormType = z.infer<typeof formSchema>
+
 export const useContactForm = () => {
   const form = useForm<FormType>({
     resolver: zodResolver(formSchema),
+    values: {
+      inquiryType: '選択してください',
+      name: '',
+      email: '',
+      content: '',
+    },
+    resetOptions: {
+      keepDefaultValues: true,
+    },
+    mode: 'onChange',
   })
 
   const onSubmit = useCallback(async (values: FormType) => {
