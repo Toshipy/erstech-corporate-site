@@ -1,7 +1,7 @@
 import { Header, Footer, AboutMessage, CompanyAbout, Team } from '@/components'
 import React from 'react'
 
-const page = () => {
+const AboutPage = () => {
   return (
     <>
       <Header />
@@ -13,4 +13,4 @@ const page = () => {
   )
 }
 
-export default page
+export default AboutPage

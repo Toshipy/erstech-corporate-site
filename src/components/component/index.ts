@@ -1,5 +1,6 @@
 export * from './AboutMessage'
 export * from './CompanyAbout'
+export * from './ContactForm'
 export * from './Footer'
 export * from './Header'
 export * from './HomePage'

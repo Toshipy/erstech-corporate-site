@@ -134,16 +134,22 @@ npx shadcn@latest add dropdown-menu
 npx shadcn@latest add button
 ```
 
+- Accordion: https://ui.shadcn.com/docs/components/accordion
+
+```
+npx shadcn@latest add accordion
+```
+
+- Form
+
+```
+npx shadcn@latest add form
+```
+
 ### Icons
 
 - Remixicon: https://classic.yarnpkg.com/en/package/remixicon
 
 ```
 yarn add remixicon
-```
-
-- Accordion: https://ui.shadcn.com/docs/components/accordion
-
-```
-npx shadcn@latest add accordion
 ```
