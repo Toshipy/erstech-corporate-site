@@ -134,16 +134,52 @@ npx shadcn@latest add dropdown-menu
 npx shadcn@latest add button
 ```
 
+- Accordion: https://ui.shadcn.com/docs/components/accordion
+
+```
+npx shadcn@latest add accordion
+```
+
+- Form
+
+```
+npx shadcn@latest add form
+```
+
+- Zod
+
+```
+yarn add zod
+```
+
+- Input: https://ui.shadcn.com/docs/components/input
+
+```
+npx shadcn@latest add input
+```
+
+- Toast: https://ui.shadcn.com/docs/components/toast
+
+```
+npx shadcn@latest add toast
+```
+
+- Select: https://ui.shadcn.com/docs/components/select
+
+```
+npx shadcn@latest add select
+```
+
+- Textarea: https://ui.shadcn.com/docs/components/textarea
+
+```
+npx shadcn@latest add textarea
+```
+
 ### Icons
 
 - Remixicon: https://classic.yarnpkg.com/en/package/remixicon
 
 ```
 yarn add remixicon
-```
-
-- Accordion: https://ui.shadcn.com/docs/components/accordion
-
-```
-npx shadcn@latest add accordion
 ```
