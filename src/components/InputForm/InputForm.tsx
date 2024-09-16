@@ -17,7 +17,7 @@ type FormFieldProps<TFieldValues extends FieldValues> = {
   placeholder?: string
 }
 
-export const FormFieldComponent = <TFieldValues extends FieldValues>({
+export const InputForm = <TFieldValues extends FieldValues>({
   control,
   name,
   label,
@@ -35,7 +35,11 @@ export const FormFieldComponent = <TFieldValues extends FieldValues>({
         render={({ field }) => (
           <FormItem>
             <FormControl>
-              <Input {...field} placeholder={placeholder} />
+              <Input
+                className="w-[500px]"
+                {...field}
+                placeholder={placeholder}
+              />
             </FormControl>
             <FormMessage />
           </FormItem>

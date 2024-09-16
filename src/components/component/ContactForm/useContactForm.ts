@@ -17,7 +17,7 @@ export const useContactForm = () => {
   const form = useForm<FormType>({
     resolver: zodResolver(formSchema),
     values: {
-      inquiryType: '選択してください',
+      inquiryType: 'other',
       name: '',
       email: '',
       content: '',

@@ -1,59 +1,65 @@
 'use client'
 
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
 import { useContactForm } from '@/components/component/ContactForm/useContactForm'
-import { FormFieldComponent } from '@/components/FormFieldComponent'
+import { InputForm } from '@/components/InputForm'
+import { SelectForm } from '@/components/SelectForm'
 
-import {
-  Button,
-  Typography,
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui'
-import { Input } from '@/components/ui'
+import { Typography, Form, ScrollArea } from '@/components/ui'
 
 export const ContactForm: React.FC = () => {
   const { form, onSubmit } = useContactForm()
   return (
-    <Form {...form}>
-      <form className="flex flex-col" onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="p-12">
-          <Typography variant="4xl">Contact us</Typography>
-          <div className="p-4">
-            <FormFieldComponent
-              control={form.control}
-              label="名前"
-              name="name"
-              required
-            />
-            <FormFieldComponent
-              control={form.control}
-              label="名前"
-              name="name"
-              required
-            />
-            <FormFieldComponent
-              control={form.control}
-              label="メールアドレス"
-              name="email"
-              required
-            />
-            <FormFieldComponent
-              control={form.control}
-              label="お問い合わせ内容"
-              name="content"
-              required
-            />
+    <ScrollArea className="h-full w-full bg-background px-6 py-10">
+      <div className="px-12">
+        <Typography variant="4xl">Contact us</Typography>
+      </div>
+      <div className="flex justify-center">
+        <div className="w-full max-w-[600px] flex-col items-center gap-8">
+          <div className="h-full w-full py-11">
+            <Form {...form}>
+              <form
+                className="flex flex-col"
+                onSubmit={form.handleSubmit(onSubmit)}
+              >
+                <SelectForm
+                  control={form.control}
+                  label="お問い合わせ種別"
+                  name="inquiryType"
+                  placeholder="選択してください"
+                  required
+                />
+                <div className="mt-6">
+                  <InputForm
+                    control={form.control}
+                    label="名前"
+                    name="name"
+                    placeholder="名前"
+                    required
+                  />
+                </div>
+                <div className="mt-6">
+                  <InputForm
+                    control={form.control}
+                    label="メールアドレス"
+                    name="email"
+                    placeholder="example@gmail.com"
+                    required
+                  />
+                </div>
+                <div className="mt-6">
+                  <InputForm
+                    control={form.control}
+                    label="お問い合わせ内容"
+                    name="content"
+                    placeholder="お問い合わせ内容"
+                    required
+                  />
+                </div>
+              </form>
+            </Form>
           </div>
         </div>
-      </form>
-      {/* </div> */}
-    </Form>
+      </div>
+    </ScrollArea>
   )
 }

@@ -164,6 +164,12 @@ npx shadcn@latest add input
 npx shadcn@latest add toast
 ```
 
+- Select: https://ui.shadcn.com/docs/components/select
+
+```
+npx shadcn@latest add select
+```
+
 ### Icons
 
 - Remixicon: https://classic.yarnpkg.com/en/package/remixicon
