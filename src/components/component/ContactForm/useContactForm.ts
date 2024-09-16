@@ -28,14 +28,29 @@ export const useContactForm = () => {
     mode: 'onChange',
   })
 
-  const onSubmit = useCallback(async (values: FormType) => {
+  const onSubmit = async (values: FormType) => {
     const data = {
       inquiryType: values.inquiryType,
       name: values.name,
       email: values.email,
       content: values.content,
     }
-  }, [])
+
+    const res = await fetch('http://localhost:8000/erstech-api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+
+    if (res.ok) {
+      console.log('Form submitted successfully.')
+    } else {
+      console.error('Form submission failed')
+    }
+  }
+
   return {
     form,
     onSubmit,
