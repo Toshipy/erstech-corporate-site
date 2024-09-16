@@ -71,7 +71,9 @@ export const ContactForm: React.FC = () => {
                 size="default"
                 type="submit"
               >
-                {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                {isSubmitting && (
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                )}
                 送信
               </Button>
             </div>
