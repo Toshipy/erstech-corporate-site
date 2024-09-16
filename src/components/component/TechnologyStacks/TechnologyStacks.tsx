@@ -1,6 +1,4 @@
-import Link from 'next/link'
 import React from 'react'
-import { HOME, SERVICE } from '@/contants'
 import { Typography, ScrollArea } from '@/components/index'
 import {
   SiAmazonwebservices,
