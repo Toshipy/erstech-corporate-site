@@ -1,5 +1,5 @@
 'use client'
-
+import { Loader2 } from 'lucide-react'
 import { useContactForm } from '@/components/component/ContactForm/useContactForm'
 import { InputForm, SelectForm, TextareaForm } from '@/components/index'
 
@@ -71,6 +71,7 @@ export const ContactForm: React.FC = () => {
                 size="default"
                 type="submit"
               >
+                {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 送信
               </Button>
             </div>
