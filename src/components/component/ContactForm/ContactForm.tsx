@@ -1,16 +1,27 @@
-import { Typography } from '@/components/ui'
-import { HOME, ABOUT } from '@/contants'
-import Link from 'next/link'
+'use client'
+
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+
+import { Button } from '@/components/ui'
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion'
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/Form/Form'
+import { Input } from '@/components/ui'
+
+const formSchema = z.object({
+  name: z.string().min(2).max(50),
+  email: z.string().min(2).max(50),
+  content: z.string().min(10).max(300),
+})
 
 export const ContactForm: React.FC = () => {
-  return (
-    <>
-    </>
-  )
+  return <></>
 }

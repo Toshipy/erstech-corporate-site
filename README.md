@@ -146,6 +146,18 @@ npx shadcn@latest add accordion
 npx shadcn@latest add form
 ```
 
+- Zod
+
+```
+yarn add zod
+```
+
+- Input: https://ui.shadcn.com/docs/components/input
+
+```
+npx shadcn@latest add input
+```
+
 ### Icons
 
 - Remixicon: https://classic.yarnpkg.com/en/package/remixicon
