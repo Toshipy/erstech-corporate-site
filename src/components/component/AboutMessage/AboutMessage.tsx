@@ -42,7 +42,7 @@ export const AboutMessage: React.FC = () => {
         <Typography variant="3xl">アイデアをシンプルに表現する</Typography>
       </div>
       <div className="px-12 py-6">
-        <Accordion type="single" collapsible>
+        <Accordion type="multiple" collapsible>
           <AccordionItem value="user-centered design">
             <div className="flex flex-col">
               <div>

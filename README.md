@@ -183,3 +183,9 @@ npx shadcn@latest add textarea
 ```
 yarn add remixicon
 ```
+
+- Simple icon: https://github.com/icons-pack/react-simple-icons
+
+```
+yarn add @icons-pack/react-simple-icons
+```
