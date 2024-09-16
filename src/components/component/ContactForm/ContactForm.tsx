@@ -1,8 +1,7 @@
 'use client'
 
 import { useContactForm } from '@/components/component/ContactForm/useContactForm'
-import { InputForm } from '@/components/InputForm'
-import { SelectForm } from '@/components/SelectForm'
+import { InputForm, SelectForm, TextareaForm } from '@/components/index'
 
 import { Typography, Form, ScrollArea } from '@/components/ui'
 
@@ -47,7 +46,7 @@ export const ContactForm: React.FC = () => {
                   />
                 </div>
                 <div className="mt-6">
-                  <InputForm
+                  <TextareaForm
                     control={form.control}
                     label="お問い合わせ内容"
                     name="content"

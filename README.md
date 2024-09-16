@@ -170,6 +170,12 @@ npx shadcn@latest add toast
 npx shadcn@latest add select
 ```
 
+- Textarea: https://ui.shadcn.com/docs/components/textarea
+
+```
+npx shadcn@latest add textarea
+```
+
 ### Icons
 
 - Remixicon: https://classic.yarnpkg.com/en/package/remixicon
