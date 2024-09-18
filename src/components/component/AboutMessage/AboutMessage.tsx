@@ -15,7 +15,7 @@ export const AboutMessage: React.FC = () => {
         <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
         &gt;
         <Link href={`${ABOUT}`} className="font-bold">
-          &nbsp;&nbsp;About
+          &nbsp;&nbsp;Who we are
         </Link>
       </div>
       <div className="relative w-full p-12">

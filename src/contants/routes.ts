@@ -24,7 +24,7 @@ export const ERSTECH_ROUTES = [
   // },
   {
     href: `${CONTACT}`,
-    label: 'Contact',
+    label: 'Contact us',
   },
 ]
 
