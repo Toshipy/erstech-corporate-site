@@ -12,11 +12,11 @@ export const HeroMessage = () => {
           className="font-serif font-medium text-slate-500"
           variant="6xl"
         >
-          Accelerating your business growth with modern technologies.
+          Something inspiring.
         </Typography>
         <div className="mt-6">
           <Typography variant="xl">
-            私たちはモダンなテクノロジーを使用し、企業のビジネス面での成長を促します
+            私たちは、モダンなテクノロジーを駆使し、企業のビジネス成長を力強く後押しします。
           </Typography>
         </div>
         <div className="mt-10">
