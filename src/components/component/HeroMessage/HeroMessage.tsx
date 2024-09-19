@@ -8,7 +8,10 @@ export const HeroMessage = () => {
   return (
     <div className="p-12">
       <div className="relative w-full flex-col items-center justify-center p-12">
-        <Typography className="font-sans text-slate-500" variant="6xl">
+        <Typography
+          className="font-serif font-medium text-slate-500"
+          variant="6xl"
+        >
           Accelerating your business growth with modern technologies.
         </Typography>
         <div className="mt-6">

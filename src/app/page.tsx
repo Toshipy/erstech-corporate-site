@@ -1,11 +1,11 @@
-import { Header, HeroMessage, CompanyLogoSlider, Footer } from '@/components'
+import { Header, HeroMessage, CompanySlider, Footer } from '@/components'
 
 export default function Home() {
   return (
     <>
       <Header />
       <HeroMessage />
-      <CompanyLogoSlider />
+      <CompanySlider />
       <Footer />
     </>
   )

@@ -189,3 +189,14 @@ yarn add remixicon
 ```
 yarn add @icons-pack/react-simple-icons
 ```
+
+### Slider
+
+- React Slick: https://react-slick.neostack.com/docs/get-started
+- Auto Play: https://react-slick.neostack.com/docs/example/auto-play
+
+```
+yarn add react-slick
+yarn add -D @types/react-slick
+yarn add slick-carousel
+```

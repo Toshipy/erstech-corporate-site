@@ -79,7 +79,7 @@ const config: Config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
       fontFamily: {
-        sans: ['Helvetica'],
+        serif: ['"Source Serif 4"', 'serif'],
       },
     },
   },

@@ -1,63 +1,75 @@
 'use client'
 import Image from 'next/image'
 
-import { Autoplay, Navigation, Pagination } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import styles from './index.module.css'
 import { Typography } from '@/components/ui'
+import Slider from 'react-slick'
 
-const images = [
-  '/cocomil_icon.png',
-  '/daiana_logo.png',
-  '/classmethod_icon.png',
-]
-
-export const CompanyLogoSlider = () => {
-  const slideSettings = {
-    0: {
-      slidesPerView: 1.4,
-      spaceBetween: 10,
-    },
-    1024: {
-      slidesPerView: 2,
-      spaceBetween: 10,
-    },
+export const CompanySlider = () => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 4000,
+    autoplaySpeed: 4000,
+    cssEase: 'linear',
+    pauseOnHover: false,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1540,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   }
 
+  const images = [
+    '/company/company_1.png',
+    '/company/company_2.png',
+    '/company/company_3.png',
+    '/company/company_4.png',
+    '/company/company_5.png',
+    '/company/company_6.png',
+    '/company/company_7.png',
+    '/company/company_8.png',
+    '/company/company_9.png',
+  ]
+
   return (
-    <div className="p-12">
-      <Typography variant="4xl">Partners</Typography>
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        breakpoints={slideSettings}
-        slidesPerView={'auto'}
-        centeredSlides={true}
-        loop={true}
-        speed={8000}
-        autoplay={{
-          delay: 0,
-          disableOnInteraction: false,
-        }}
-        className={styles.swiperWrapper}
-      >
+    <div className="px-12 pb-12">
+      <div className="p-12">
+        <Typography variant="4xl">Partners</Typography>
+      </div>
+      <Slider {...settings}>
         {images.map((src: string, index: number) => (
-          <SwiperSlide key={index}>
-            <div className="styles.imageContainer">
-              <Image
-                src={src}
-                width={150}
-                height={150}
-                alt="Slider Image"
-                sizes="(min-width: 1024px) 100vw, 60vw"
-                className={styles.slideImage}
-              />
+          <div key={index} className="card-cover p-4">
+            <div className="card">
+              <Image alt="" src={src} fill className="img" />
             </div>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </Slider>
     </div>
   )
 }
