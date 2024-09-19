@@ -1,4 +1,11 @@
-import { Header, HeroMessage, CompanySlider, Footer } from '@/components'
+import {
+  Header,
+  HeroMessage,
+  CompanySlider,
+  Footer,
+  ServiceIntroduction,
+  ProductsIntroduction,
+} from '@/components'
 
 export default function Home() {
   return (
@@ -6,6 +13,8 @@ export default function Home() {
       <Header />
       <HeroMessage />
       <CompanySlider />
+      <ServiceIntroduction />
+      <ProductsIntroduction />
       <Footer />
     </>
   )

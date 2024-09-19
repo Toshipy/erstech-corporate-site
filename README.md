@@ -200,3 +200,9 @@ yarn add react-slick
 yarn add -D @types/react-slick
 yarn add slick-carousel
 ```
+
+### Framer motion
+
+```
+yarn add framer-motion
+```
