@@ -4,8 +4,10 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  Button,
 } from '@/components/ui'
 import { PRODUCTS } from '@/contants'
+import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
 
 import React from 'react'
@@ -47,6 +49,17 @@ export const ProductsIntroduction = () => {
                 </Link>
               )
             })}
+          </div>
+          <div className="mt-10">
+            <Link href={`${PRODUCTS}`} className="font-bold">
+              <Button
+                className="items-center rounded-full px-10 py-7 hover:bg-slate-500"
+                size="lg"
+              >
+                <Typography variant="2xl">More products</Typography>
+                <MoveRight className="ml-3 space-x-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

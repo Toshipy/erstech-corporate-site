@@ -1,7 +1,7 @@
 import {
   Header,
   HeroMessage,
-  CompanySlider,
+  PartnersLogoSlider,
   Footer,
   ServiceIntroduction,
   ProductsIntroduction,
@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Header />
       <HeroMessage />
-      <CompanySlider />
+      <PartnersLogoSlider />
       <ServiceIntroduction />
       <ProductsIntroduction />
       <Footer />

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Typography } from '@/components/ui'
 import Slider from 'react-slick'
 
-export const CompanySlider = () => {
+export const PartnersLogoSlider = () => {
   const settings = {
     dots: false,
     infinite: true,
