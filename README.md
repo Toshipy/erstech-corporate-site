@@ -176,6 +176,12 @@ npx shadcn@latest add select
 npx shadcn@latest add textarea
 ```
 
+- Card: https://ui.shadcn.com/docs/components/card
+
+```
+npx shadcn@latest add card
+```
+
 ### Icons
 
 - Remixicon: https://classic.yarnpkg.com/en/package/remixicon
@@ -188,4 +194,21 @@ yarn add remixicon
 
 ```
 yarn add @icons-pack/react-simple-icons
+```
+
+### Slider
+
+- React Slick: https://react-slick.neostack.com/docs/get-started
+- Auto Play: https://react-slick.neostack.com/docs/example/auto-play
+
+```
+yarn add react-slick
+yarn add -D @types/react-slick
+yarn add slick-carousel
+```
+
+### Framer motion
+
+```
+yarn add framer-motion
 ```

@@ -1,10 +1,20 @@
-import { Header, HomePage, Footer } from '@/components'
+import {
+  Header,
+  HeroMessage,
+  PartnersLogoSlider,
+  Footer,
+  ServiceIntroduction,
+  ProductsIntroduction,
+} from '@/components'
 
 export default function Home() {
   return (
     <>
       <Header />
-      <HomePage />
+      <HeroMessage />
+      <PartnersLogoSlider />
+      <ServiceIntroduction />
+      <ProductsIntroduction />
       <Footer />
     </>
   )
