@@ -176,6 +176,12 @@ npx shadcn@latest add select
 npx shadcn@latest add textarea
 ```
 
+- Card: https://ui.shadcn.com/docs/components/card
+
+```
+npx shadcn@latest add card
+```
+
 ### Icons
 
 - Remixicon: https://classic.yarnpkg.com/en/package/remixicon
