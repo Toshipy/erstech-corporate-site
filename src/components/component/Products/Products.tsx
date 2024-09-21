@@ -4,15 +4,13 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  Button,
 } from '@/components/ui'
-import { PRODUCTS } from '@/contants'
-import { MoveRight } from 'lucide-react'
+import { HOME, PRODUCTS } from '@/contants'
 import Link from 'next/link'
 
 import React from 'react'
 
-export const ProductsIntroduction = () => {
+export const Products = () => {
   const cards = [
     {
       id: 1,
@@ -36,6 +34,13 @@ export const ProductsIntroduction = () => {
 
   return (
     <div className="h-full w-full bg-background p-12">
+      <div>
+        <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
+        &gt;
+        <Link href={`${PRODUCTS}`} className="font-bold">
+          &nbsp;&nbsp;Products
+        </Link>
+      </div>
       <div className="p-12">
         <Typography variant="4xl">Products</Typography>
         <div className="container mx-auto py-12">
@@ -52,17 +57,6 @@ export const ProductsIntroduction = () => {
                 </Link>
               )
             })}
-          </div>
-          <div className="mt-10">
-            <Link href={`${PRODUCTS}`} className="font-bold">
-              <Button
-                className="items-center rounded-full px-10 py-7 hover:bg-slate-500"
-                size="lg"
-              >
-                <Typography variant="2xl">More products</Typography>
-                <MoveRight className="ml-3 space-x-2" />
-              </Button>
-            </Link>
           </div>
         </div>
       </div>
