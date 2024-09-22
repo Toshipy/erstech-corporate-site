@@ -10,7 +10,12 @@ export const Footer: React.FC = () => {
     <footer className="top-full flex w-full justify-between border-t-2 p-4">
       <div>
         <Link href={`${HOME}`}>
-          <Image src="/daiana_logo.png" alt="logo" width={200} height={200} />
+          <Image
+            src="/company/company_5.png"
+            alt="logo"
+            width={200}
+            height={200}
+          />
         </Link>
         <p>&copy; Erstech Corporation. All rigths reserved.</p>
       </div>

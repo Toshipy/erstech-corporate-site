@@ -11,11 +11,13 @@ export const ContactForm: React.FC = () => {
   const { form, onSubmit, isSubmitting, isValid, isDirty } = useContactForm()
   return (
     <ScrollArea className="h-full w-full bg-background p-12">
-      <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
-      &gt;
-      <Link href={`${CONTACT}`} className="font-bold">
-        &nbsp;&nbsp;Contact
-      </Link>
+      <div className="px-12">
+        <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
+        &gt;
+        <Link href={`${CONTACT}`} className="font-bold">
+          &nbsp;&nbsp;Contact us
+        </Link>
+      </div>
       <div className="px-12 pt-12">
         <Typography variant="4xl">Contact us</Typography>
       </div>

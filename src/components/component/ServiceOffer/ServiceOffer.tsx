@@ -12,11 +12,13 @@ import Link from 'next/link'
 export const ServiceOffer = () => {
   return (
     <ScrollArea className="h-full w-full bg-background p-12">
-      <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
-      &gt;
-      <Link href={`${SERVICE}`} className="font-bold">
-        &nbsp;&nbsp;Service
-      </Link>
+      <div className="px-12">
+        <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
+        &gt;
+        <Link href={`${SERVICE}`} className="font-bold">
+          &nbsp;&nbsp;Service
+        </Link>
+      </div>
       <div className="px-12 pt-12">
         <Typography variant="4xl">Service we offer</Typography>
       </div>

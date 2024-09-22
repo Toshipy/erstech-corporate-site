@@ -160,7 +160,7 @@ export const CareersInfo = () => {
 
   return (
     <div className="p-12">
-      <div>
+      <div className="px-12">
         <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
         &gt;
         <Link href={`${CAREERS}`} className="font-bold">

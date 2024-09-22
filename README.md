@@ -218,3 +218,11 @@ yarn add slick-carousel
 ```
 yarn add framer-motion
 ```
+
+### Chackra UI
+
+Get Started: https://v2.chakra-ui.com/getting-started
+
+```
+yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion
+```

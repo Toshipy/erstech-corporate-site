@@ -9,7 +9,7 @@ export const ProductDetails = () => {
 
   return (
     <div className="h-full w-full bg-background p-12">
-      <div>
+      <div className="px-12">
         <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
         &gt;
         <Link href={`${PRODUCTS}`}>&nbsp;&nbsp;Products&nbsp;&nbsp;</Link>
