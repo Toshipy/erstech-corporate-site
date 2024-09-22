@@ -182,6 +182,12 @@ npx shadcn@latest add textarea
 npx shadcn@latest add card
 ```
 
+- Dialog: https://ui.shadcn.com/docs/components/dialog
+
+```
+npx shadcn@latest add dialog
+```
+
 ### Icons
 
 - Remixicon: https://classic.yarnpkg.com/en/package/remixicon

@@ -1,6 +1,7 @@
 export * from './AboutMessage'
 export * from './CompanyAbout'
 export * from './PartnersLogoSlider'
+export * from './CareersInfo'
 export * from './ContactForm'
 export * from './Footer'
 export * from './Header'
