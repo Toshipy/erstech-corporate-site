@@ -133,6 +133,19 @@ export const CareersInfo = () => {
     setModalOpen(false)
   }
 
+  const frontendEngineers = careerCards.filter(
+    (card) => card.position === 'Frontend Engineer',
+  )
+  const backendEngineers = careerCards.filter(
+    (card) => card.position === 'Backend Engineer',
+  )
+  const infraEngineers = careerCards.filter(
+    (card) => card.position === 'Infra Engineer',
+  )
+  const devOpsSreEngineers = careerCards.filter(
+    (card) => card.position === 'DevOps/SRE Engineer',
+  )
+
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = 'hidden'
@@ -157,21 +170,78 @@ export const CareersInfo = () => {
       <div className="p-12">
         <Typography variant="4xl">Open Positions</Typography>
         <div className="container mx-auto py-12">
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {careerCards.map((card, index) => {
-              return (
-                <Card
-                  className="flex h-full cursor-pointer flex-col justify-between bg-white shadow-lg hover:bg-slate-200"
-                  key={index}
-                  onClick={() => handleCardClick(card)}
-                >
-                  <CardHeader>
-                    <CardTitle>{card.position}</CardTitle>
-                    <CardDescription>{card.employment_type}</CardDescription>
-                  </CardHeader>
-                </Card>
-              )
-            })}
+          {/* Frontend Engineers */}
+          <Typography variant="3xl">Frontend Engineers</Typography>
+          <div className="mt-5 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {frontendEngineers.map((card, index) => (
+              <Card
+                className="flex h-full cursor-pointer flex-col justify-between bg-white shadow-lg hover:bg-slate-200"
+                key={index}
+                onClick={() => handleCardClick(card)}
+              >
+                <CardHeader>
+                  <CardTitle>{card.position}</CardTitle>
+                  <CardDescription>{card.employment_type}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+
+          {/* Backend Engineers */}
+          <Typography variant="3xl" className="mt-12">
+            Backend Engineers
+          </Typography>
+          <div className="mt-5 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {backendEngineers.map((card, index) => (
+              <Card
+                className="flex h-full cursor-pointer flex-col justify-between bg-white shadow-lg hover:bg-slate-200"
+                key={index}
+                onClick={() => handleCardClick(card)}
+              >
+                <CardHeader>
+                  <CardTitle>{card.position}</CardTitle>
+                  <CardDescription>{card.employment_type}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+
+          {/* Infra Engineers */}
+          <Typography variant="3xl" className="mt-12">
+            Infra Engineers
+          </Typography>
+          <div className="mt-5 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {infraEngineers.map((card, index) => (
+              <Card
+                className="flex h-full cursor-pointer flex-col justify-between bg-white shadow-lg hover:bg-slate-200"
+                key={index}
+                onClick={() => handleCardClick(card)}
+              >
+                <CardHeader>
+                  <CardTitle>{card.position}</CardTitle>
+                  <CardDescription>{card.employment_type}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+
+          {/* DevOps Engineers */}
+          <Typography variant="3xl" className="mt-12">
+            DevOps/SRE Engineers
+          </Typography>
+          <div className="mt-5 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {devOpsSreEngineers.map((card, index) => (
+              <Card
+                className="flex h-full cursor-pointer flex-col justify-between bg-white shadow-lg hover:bg-slate-200"
+                key={index}
+                onClick={() => handleCardClick(card)}
+              >
+                <CardHeader>
+                  <CardTitle>{card.position}</CardTitle>
+                  <CardDescription>{card.employment_type}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
