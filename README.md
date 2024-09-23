@@ -218,3 +218,19 @@ yarn add slick-carousel
 ```
 yarn add framer-motion
 ```
+
+### EmailJS
+
+EmailJS: https://www.emailjs.com/docs/sdk/installation/
+
+```
+yarn add @emailjs/browser
+```
+
+### Sonner
+
+Sonner: https://classic.yarnpkg.com/en/package/sonner
+
+```
+yarn add sonner
+```

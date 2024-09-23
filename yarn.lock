@@ -1549,6 +1549,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emailjs/browser@npm:^4.4.1":
+  version: 4.4.1
+  resolution: "@emailjs/browser@npm:4.4.1"
+  checksum: 7c33dae1062c7f3106c38c290643c1096505762dea19a71d89515890fb204f5ae3e2954eec3d4c4de1aa6ea586e956d88cde2e5b9a2e4075ea849de9735b6d16
+  languageName: node
+  linkType: hard
+
 "@emnapi/runtime@npm:^1.2.0":
   version: 1.2.0
   resolution: "@emnapi/runtime@npm:1.2.0"
@@ -6390,6 +6397,7 @@ __metadata:
   resolution: "erstech-corporate-site@workspace:."
   dependencies:
     "@chromatic-com/storybook": ^1.9.0
+    "@emailjs/browser": ^4.4.1
     "@hookform/resolvers": ^3.9.0
     "@icons-pack/react-simple-icons": ^10.0.0
     "@radix-ui/react-accordion": ^1.2.0
@@ -6432,6 +6440,7 @@ __metadata:
     react-slick: ^0.30.2
     remixicon: ^4.3.0
     slick-carousel: ^1.8.1
+    sonner: ^1.5.0
     storybook: ^8.2.9
     swiper: latest
     tailwind-merge: ^2.5.2
@@ -11632,6 +11641,16 @@ __metadata:
     ip-address: ^9.0.5
     smart-buffer: ^4.2.0
   checksum: 7a6b7f6eedf7482b9e4597d9a20e09505824208006ea8f2c49b71657427f3c137ca2ae662089baa73e1971c62322d535d9d0cf1c9235cf6f55e315c18203eadd
+  languageName: node
+  linkType: hard
+
+"sonner@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "sonner@npm:1.5.0"
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  checksum: 0b0f911785b74209a44fe85fe5b0cf3bd440c78271285026dc1290bb6e8c6296c92a01a0f72646d18312654c138838aeadd15a55c20954a193cb65ccf84f51e3
   languageName: node
   linkType: hard
 

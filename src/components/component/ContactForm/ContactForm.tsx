@@ -6,11 +6,13 @@ import { InputForm, SelectForm, TextareaForm } from '@/components/index'
 import { Typography, Form, ScrollArea, Button } from '@/components/ui'
 import Link from 'next/link'
 import { HOME, CONTACT } from '@/contants'
+import { Toaster } from 'sonner'
 
 export const ContactForm: React.FC = () => {
   const { form, onSubmit, isSubmitting, isValid, isDirty } = useContactForm()
   return (
     <ScrollArea className="h-full w-full bg-background p-12">
+      <Toaster richColors={true} />
       <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
       &gt;
       <Link href={`${CONTACT}`} className="font-bold">
