@@ -19,7 +19,7 @@ import { ERSTECH_ROUTES, HOME, CONTACT } from '@/contants'
 
 export const Header = () => {
   const initialValue = 100
-  const finalValue = 80
+  const finalValue = 70
   const thresholdY = 170
 
   const speed = 1
