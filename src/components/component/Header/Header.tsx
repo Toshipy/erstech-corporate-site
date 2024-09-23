@@ -13,7 +13,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
-import { ERSTECH_ROUTES, HOME, CONTACT } from '@/contants'
+import { ERSTECH_ROUTES, HOME } from '@/contants'
 
 // import { ModeToggle } from '@/components'
 
