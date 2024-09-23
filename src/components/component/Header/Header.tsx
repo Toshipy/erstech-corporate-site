@@ -19,7 +19,7 @@ import { ERSTECH_ROUTES, HOME, CONTACT } from '@/contants'
 
 export const Header = () => {
   const initialValue = 100
-  const finalValue = 60
+  const finalValue = 80
   const thresholdY = 170
 
   const speed = 1
@@ -44,7 +44,7 @@ export const Header = () => {
   )
 
   return (
-    <div className="mb-12">
+    <div className="mb-20">
       <motion.div
         className="fixed top-0 z-10 flex w-full items-center border-slate-500 bg-slate-800 text-white"
         style={{ height: scrollOutput }}
