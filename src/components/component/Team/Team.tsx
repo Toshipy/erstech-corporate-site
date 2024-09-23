@@ -7,13 +7,15 @@ export const Team = () => {
     {
       id: 1,
       name: 'Seiichi Arai',
-      imgSrc: '/seiichi_profile.png',
+      imgSrc:
+        'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/team/seiichi_profile.png',
       department: '代表社員',
     },
     {
       id: 2,
       name: 'Toshiaki Arai',
-      imgSrc: '/toshiaki_profile.png',
+      imgSrc:
+        'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/team/toshiaki_profile.png',
       department: 'エンジニア',
     },
   ]

@@ -19,7 +19,7 @@ export const AboutMessage: React.FC = () => {
         </Link>
       </div>
       <div className="relative w-full p-12">
-        <Typography className="text-gray-400" variant="6xl">
+        <Typography className="font-serif text-gray-400" variant="6xl">
           Who we are
         </Typography>
       </div>
@@ -34,7 +34,7 @@ export const AboutMessage: React.FC = () => {
         </Typography>
       </div>
       <div className="relative w-full p-12">
-        <Typography className="text-gray-400" variant="6xl">
+        <Typography className="font-serif text-gray-400" variant="6xl">
           Our mission
         </Typography>
       </div>
