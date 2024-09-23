@@ -61,9 +61,11 @@ export const Header = () => {
               <Link href={`${HOME}`}>
                 <Logo height={25} width={116} />
               </Link>
-              <Typography variant="4xl" className="font-serif">
-                Erstech
-              </Typography>
+              <Link href={`${HOME}`}>
+                <Typography variant="4xl" className="font-serif">
+                  Erstech
+                </Typography>
+              </Link>
             </div>
             <NavigationMenu className="ml-20 flex space-x-4">
               <NavigationMenuList>

@@ -36,10 +36,10 @@ export const ProductsIntroduction = () => {
 
   return (
     <div className="h-full w-full bg-background p-12">
-      <div className="p-12">
+      <div className="px-12">
         <Typography variant="4xl">Products</Typography>
-        <div className="container mx-auto py-12">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="container mx-auto">
+          <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {cards.map((card, index) => {
               return (
                 <Link href={`${PRODUCTS}/${card.id}`} key={index}>
