@@ -131,7 +131,7 @@ export const Sound: React.FC = () => {
         <Modal onClose={() => setShowModal(false)} toggle={toggle} />
       )}
       <audio ref={audioRef} loop>
-        <source src={'/audio/uplifting.mp3'} type="audio/mpeg" />
+        <source src={'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/sound/universe.mp3'} type="audio/mpeg" />
         あなたのブラウザではオーディオがサポートされていません。
       </audio>
       <motion.button

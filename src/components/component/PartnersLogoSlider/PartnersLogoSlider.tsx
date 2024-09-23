@@ -45,15 +45,24 @@ export const PartnersLogoSlider = () => {
   }
 
   const images = [
-    '/company/company_1.png',
-    '/company/company_2.png',
-    '/company/company_3.png',
-    '/company/company_4.png',
-    '/company/company_5.png',
-    '/company/company_6.png',
-    '/company/company_7.png',
-    '/company/company_8.png',
-    '/company/company_9.png',
+    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_1.png',
+    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_2.png',
+    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_3.png',
+    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_4.png',
+    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_5.png',
+    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_6.png',
+    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_7.png',
+    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_8.png',
+    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_9.png',
+    // '/company/company_1.png',
+    // '/company/company_2.png',
+    // '/company/company_3.png',
+    // '/company/company_4.png',
+    // '/company/company_5.png',
+    // '/company/company_6.png',
+    // '/company/company_7.png',
+    // '/company/company_8.png',
+    // '/company/company_9.png',
   ]
 
   return (
