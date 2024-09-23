@@ -1,7 +1,8 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
 import 'remixicon/fonts/remixicon.css'
-import { ERSTECH_ROUTES, HOME } from '@/contants'
+import { HOME } from '@/contants'
+import { Logo } from '@/components'
 
 import { Button, Typography } from '@/components'
 
@@ -9,9 +10,12 @@ export const Footer: React.FC = () => {
   return (
     <footer className="flex w-full border-t-2 bg-slate-800 px-10 py-4">
       <div className="px-10">
-        <Link href={`${HOME}`}>
-          <Image src="/erstech_logo.png" alt="logo" width={150} height={150} />
-        </Link>
+        <div className="pb-4">
+          <Link href={`${HOME}`}>
+            {/* <Image src="/erstech_logo.png" alt="logo" width={150} height={150} /> */}
+            <Logo />
+          </Link>
+        </div>
         <Typography className="text-white">
           &copy; Erstech Corporation. All rigths reserved.
         </Typography>

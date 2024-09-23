@@ -45,7 +45,7 @@ const Modal: React.FC<ModalProps> = ({ onClose, toggle }) => {
   // document.getElementById('my-modal') as HTMLElement,
   return (
     <Dialog open onOpenChange={onClose}>
-      <DialogContent className="text-center bg-slate-100">
+      <DialogContent className="bg-slate-100 text-center">
         <DialogHeader>
           <DialogTitle>
             バックグラウンドミュージックを再生しますか？
@@ -131,7 +131,12 @@ export const Sound: React.FC = () => {
         <Modal onClose={() => setShowModal(false)} toggle={toggle} />
       )}
       <audio ref={audioRef} loop>
-        <source src={'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/sound/universe.mp3'} type="audio/mpeg" />
+        <source
+          src={
+            'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/sound/universe.mp3'
+          }
+          type="audio/mpeg"
+        />
         あなたのブラウザではオーディオがサポートされていません。
       </audio>
       <motion.button

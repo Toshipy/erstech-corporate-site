@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
-// module.exports = {
-//   images: {
-//     domains: [''],
-//   },
-// }
-
-export default nextConfig
+export default {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'erstech-corporate-site.s3.ap-northeast-1.amazonaws.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
+}

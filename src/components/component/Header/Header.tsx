@@ -57,9 +57,9 @@ export const Header = () => {
           }}
         >
           <header className="flex items-center px-4">
-            <div className="flex items-center">
+            <div className="flex items-center gap-6">
               <Link href={`${HOME}`}>
-                <Logo height={25} width={116} />
+                <Logo />
               </Link>
               <Link href={`${HOME}`}>
                 <Typography variant="4xl" className="font-serif">
