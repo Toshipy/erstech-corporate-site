@@ -4,6 +4,7 @@ import { Typography } from '@/components/ui'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
+import { X } from 'lucide-react'
 
 export const Team = () => {
   const teamMembers = [
@@ -80,12 +81,18 @@ export const Team = () => {
               className="relative h-[80%] w-[80%] overflow-y-auto rounded-lg bg-white p-6"
               onClick={(e) => e.stopPropagation()}
             >
+              <motion.button
+                onClick={() => setSelectedId(null)}
+                className="absolute right-2 top-2 rounded-lg bg-slate-200 p-4 hover:bg-slate-400"
+              >
+                <X />
+              </motion.button>
               <Image
                 src={selectedMember.imgSrc}
                 alt={selectedMember.name}
                 className="h-100 w-100 rounded-lg border border-gray-300 object-cover"
-                height={300}
-                width={300}
+                height={100}
+                width={100}
               />
               <Typography variant="xl" className="pt-4">
                 {selectedMember.name}
@@ -93,9 +100,6 @@ export const Team = () => {
               <Typography variant="sm" className="text-slate-500">
                 {selectedMember.department}
               </Typography>
-              <motion.button onClick={() => setSelectedId(null)} className="">
-                x
-              </motion.button>
             </motion.div>
           </motion.div>
         )}
