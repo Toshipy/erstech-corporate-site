@@ -87,7 +87,7 @@ export const Header = () => {
                 <audio ref={audioRef} loop>
                   <source
                     src={
-                      'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/sound/universe.mp3'
+                      'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/sound/Aphrodite.mp3'
                     }
                     type="audio/mpeg"
                   />
