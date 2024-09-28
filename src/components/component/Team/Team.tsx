@@ -14,6 +14,7 @@ export const Team = () => {
       imgSrc:
         'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/team/seiichi_profile.png',
       department: '代表社員',
+      message: 'ほげほげ',
     },
     {
       id: '2',
@@ -21,6 +22,7 @@ export const Team = () => {
       imgSrc:
         'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/team/toshiaki_profile.png',
       department: 'エンジニア',
+      message: 'なるほど',
     },
   ]
 
@@ -87,19 +89,35 @@ export const Team = () => {
               >
                 <X />
               </motion.button>
-              <Image
-                src={selectedMember.imgSrc}
-                alt={selectedMember.name}
-                className="h-100 w-100 rounded-lg border border-gray-300 object-cover"
-                height={100}
-                width={100}
-              />
-              <Typography variant="xl" className="pt-4">
-                {selectedMember.name}
-              </Typography>
-              <Typography variant="sm" className="text-slate-500">
-                {selectedMember.department}
-              </Typography>
+              <div className="flex space-x-4 border-b-2 border-slate-200 p-7">
+                <Image
+                  src={selectedMember.imgSrc}
+                  alt={selectedMember.name}
+                  className="h-100 w-100 rounded-lg border border-gray-300 object-cover"
+                  height={200}
+                  width={200}
+                />
+                <div className="flex-col space-y-1">
+                  <Typography variant="xl" className="pt-4">
+                    {selectedMember.name}
+                  </Typography>
+                  <Typography variant="sm" className="text-slate-500">
+                    {selectedMember.department}
+                  </Typography>
+                  <div className="py-4">
+                    <Typography variant="sm" className="">
+                      {selectedMember.message}
+                    </Typography>
+                  </div>
+                </div>
+              </div>
+              <div className="py-5">
+                <div className="px-7">
+                  <Typography variant="2xl" className="font-bold">
+                    Recent Posts.
+                  </Typography>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         )}
