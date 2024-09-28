@@ -253,7 +253,7 @@ export const CareersInfo = () => {
           ></div>
           <div className="fixed inset-0 right-0 z-50 ml-auto flex justify-end overflow-y-auto overflow-x-hidden outline-none focus:outline-none">
             <motion.div
-              className="relative my-6 ml-auto flex w-auto max-w-6xl"
+              className="relative my-6 ml-auto flex w-auto max-w-4xl"
               initial={{ opacity: 0, x: '100%' }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '100%' }}
@@ -273,7 +273,7 @@ export const CareersInfo = () => {
                   <Button onClick={handleCloseModal}>Close</Button>
                 </div>
                 <div className="relative flex-auto overflow-y-auto p-6">
-                  <div className="my-4 border-b border-solid border-slate-200">
+                  <div className="mb-4 border-b border-solid border-slate-200">
                     <Typography variant="xl" className="font-bold">
                       雇用形態
                     </Typography>
