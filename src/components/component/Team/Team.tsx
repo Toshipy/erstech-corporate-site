@@ -46,20 +46,20 @@ export const Team = () => {
       <div className="p-12">
         <Typography variant="3xl">Team</Typography>
       </div>
-      <div className="grid grid-cols-1 justify-items-center sm:grid-cols-3 md:grid-cols-4">
+      <div className="grid grid-cols-1 justify-items-center sm:grid-cols-3 md:grid-cols-3">
         {teamMembers.map((member) => (
           <motion.div
             key={member.id}
             layoutId={member.id}
-            className="flex w-[200px] flex-col items-center rounded-lg bg-gray-100 p-4"
+            className="flex w-[300px] flex-col items-center rounded-lg bg-gray-100 p-4"
             onClick={() => setSelectedId(member.id)}
           >
             <Image
               src={member.imgSrc}
               alt={member.name}
               className="h-100 w-100 rounded-lg border border-gray-300 object-cover"
-              height={200}
-              width={200}
+              height={300}
+              width={300}
             />
             <motion.div>
               <Typography variant="xl" className="pt-2">
