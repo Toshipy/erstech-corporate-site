@@ -100,6 +100,12 @@ yarn dlx vercel
 
 ```
 
+### Zustand
+
+```
+yarn add zustand
+```
+
 ### shadcn ui libraries
 
 - Navigation Menu:

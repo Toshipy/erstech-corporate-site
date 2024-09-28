@@ -10,12 +10,12 @@ import {
   Logo,
 } from '@/components'
 import Link from 'next/link'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useSound } from './useSound'
 
 import { ERSTECH_ROUTES, HOME } from '@/contants'
 import { Volume2, VolumeX } from 'lucide-react'
+import { useSound } from '@/components'
 
 export const Header = () => {
   const initialValue = 100
