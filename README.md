@@ -234,3 +234,8 @@ Sonner: https://classic.yarnpkg.com/en/package/sonner
 ```
 yarn add sonner
 ```
+
+## Contentful
+```
+yarn add contentful
+```
