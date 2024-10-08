@@ -6,32 +6,20 @@ import {
   CardTitle,
 } from '@/components/ui'
 import { HOME, PRODUCTS } from '@/contants'
-import { buildClient } from '@/lib/contentful'
+import { getAllProducts } from '@/lib/contentful/api'
 import { IProductFields } from '@/types/product'
-import { Entry, EntryCollection } from 'contentful'
-import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
+import { Entry } from 'contentful'
+import { NextPage } from 'next'
 import Link from 'next/link'
 
 import React from 'react'
 
-const client = buildClient()
-
-export const getStaticProps: GetStaticProps = async () => {
-  const { items }: EntryCollection<IProductFields> = await client.getEntries({
-    content_type: 'product',
-  })
-
-  return {
-    props: {
-      products: items,
-    },
-    revalidate: 60,
-  }
+type Props = {
+  products: Entry<IProductFields>[]
 }
 
-type Props = InferGetStaticPropsType<typeof getStaticProps>
-
-export const Products: NextPage<Props> = ({ products }) => {
+export const Products: NextPage<Props> = async () => {
+  const products = await getAllProducts()
   return (
     <div className="h-full w-full bg-background p-12">
       <div>

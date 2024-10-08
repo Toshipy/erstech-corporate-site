@@ -5,7 +5,7 @@ const ProductPage = () => {
   return (
     <>
       <Header />
-      <Products />
+      <Products products={[]} />
       <Footer />
     </>
   )
