@@ -15,18 +15,3 @@ export interface IOpenPositionFields extends EntrySkeletonType {
     id: string
   }
 }
-
-// export interface IOpenPositionFields {
-//   fields: {
-//     position: string;
-//     position_kana: string;
-//     employmentType: string;
-//     duties: string;
-//     requirements: string;
-//     wellcomeSkills: string;
-//     workingStyle: string;
-//     salary: string;
-//     location: string;
-//   };
-//   contentTypeId: string;
-// }
