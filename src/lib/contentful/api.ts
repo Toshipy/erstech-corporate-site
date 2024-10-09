@@ -14,3 +14,11 @@ export async function getAllMembers() {
 
   return response.items
 }
+
+export async function getAllOpenPositions() {
+  const response = await client.getEntries({
+    content_type: 'openPosition',
+  })
+
+  return response.items
+}

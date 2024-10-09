@@ -14,7 +14,7 @@ type Props = {
 }
 
 export const Team: React.FC<Props> = ({ teamMembers }) => {
-  console.log('teamMembers', teamMembers)
+  // console.log('teamMembers', teamMembers)
 
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const selectedMember =
