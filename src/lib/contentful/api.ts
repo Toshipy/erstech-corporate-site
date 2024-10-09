@@ -6,3 +6,11 @@ export async function getAllProducts() {
   })
   return response.items
 }
+
+export async function getAllMembers() {
+  const response = await client.getEntries({
+    content_type: 'member',
+  })
+
+  return response.items
+}
