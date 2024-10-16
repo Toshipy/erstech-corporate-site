@@ -1,5 +1,7 @@
 import { Footer, Header, ProductDetails } from '@/components'
 
+export const runtime = 'edge';
+
 const ProductDetail = () => {
   return (
     <>
