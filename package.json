@@ -71,7 +71,19 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
-  "packageManager": "yarn@3.8.3",
+  "engines": {
+    "node": ">=20.17.0",
+    "npm": "use pnpm",
+    "yarn": "use pnpm",
+    "pnpm": ">=9.8.0"
+  },
+  "packageManager": "pnpm@9.12.3",
+  "pnpm": {
+    "overrides": {
+      "@types/react": "npm:types-react@19.0.0-rc.1",
+      "@types/react-dom": "npm:types-react-dom@19.0.0"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "plugin:storybook/recommended"
