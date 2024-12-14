@@ -9,7 +9,8 @@
     "lint": "next lint",
     "format:fix": "npx prettier --write \"./**/*.ts\" \"./**/*.tsx\"",
     "typecheck": "tsc --noEmit",
-    "checkall": "yarn typecheck && yarn format:fix && yarn lint",
+    "all:check": "run-s type-check lint format:check",
+    "all:fix": "run-s lint:fix format:write",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
