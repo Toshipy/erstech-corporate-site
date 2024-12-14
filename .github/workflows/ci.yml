@@ -1,16 +1,53 @@
 name: Erstech Corporate Site CI
 
 on:
-  push:
-    branches: ['main']
-
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'eslint.config.mjs'
+      - 'prettier.config.cjs'
+      - 'tsconfig.json'
 jobs:
-  deploy:
+  lint:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
     steps:
-      - uses: actions/checkout@v3
+      - name: チェックアウト
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - run: vercel --yes --prod --token=${{ secrets.VERCEL_TOKEN }}
-    env:
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      - name: Node.js ${{ matrix.node-version }} を使用
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: pnpmをセットアップ
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.8.0
+
+      - name: node_modulesをキャッシュ
+        uses: actions/cache@v4
+        id: pnpm-cache
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: './node_modules'
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+      - name: パッケージをインストール
+        if: ${{ steps.pnpm-cache.outputs.cache-hit != 'true' }}
+        run: pnpm install
+
+      - name: node_modulesキャッシュを保存
+        if: steps.pnpm-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: './node_modules'
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+
