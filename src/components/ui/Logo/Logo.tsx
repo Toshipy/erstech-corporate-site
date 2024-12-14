@@ -9,7 +9,7 @@ export const Logo: FC<Props> = (props) => {
   return (
     <Image
       alt="erstech"
-      src="https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/logo/Erstech_logo.svg"
+      src="https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/logo/logo_color1.svg"
       height={70}
       width={70}
       {...props}
