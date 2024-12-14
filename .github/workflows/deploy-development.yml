@@ -2,7 +2,7 @@ name: Vercel Development Deployment
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-  VERCEL_URL: '${{ github.ref_name }}-cocomil.vercel.app'
+  VERCEL_URL: 'erstech-corporate-site.vercel.app'
 on:
   push:
     branches:
@@ -33,5 +33,3 @@ jobs:
       - name: Deploy Project Artifacts to Vercel
         id: deploy
         run: echo "url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
-      - name: Assign staging domain to deployment
-        run: vercel alias ${{ steps.deploy.outputs.url }} v2.dev.cocomil.me --scope=cocomil --token=${{ secrets.VERCEL_TOKEN }}
