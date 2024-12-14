@@ -1,0 +1,69 @@
+name: Deploy Storybook to GitHub Pages
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v4
+
+      - name: Node.js ${{ matrix.node-version }} を使用
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: pnpmをセットアップ
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.8.0
+
+      - name: node_modulesをキャッシュ
+        uses: actions/cache@v4
+        id: pnpm-cache
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: './node_modules'
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+      - name: パッケージをインストール
+        if: ${{ steps.pnpm-cache.outputs.cache-hit != 'true' }}
+        run: pnpm install
+
+      - name: Storybookをビルド
+        run: npm run storybook:build
+
+      - name: GitHub Pages用のアーティファクトをアップロード
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./storybook-static
+
+      - name: node_modulesキャッシュを保存
+        if: steps.pnpm-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: './node_modules'
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
