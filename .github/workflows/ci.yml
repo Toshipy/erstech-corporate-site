@@ -1,6 +1,14 @@
 name: Erstech Corporate site CI
 
 on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'eslint.config.mjs'
+      - 'prettier.config.cjs'
+      - 'tsconfig.json'
   push:
     branches:
       - develop
@@ -19,7 +27,7 @@ jobs:
         with:
           node-version: 22.x
 
-      - name: pnpmを セットアップ
+      - name: pnpmをセットアップ
         uses: pnpm/action-setup@v4
         with:
           version: 9.8.0
