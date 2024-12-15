@@ -4,7 +4,12 @@ import Link from 'next/link'
 import { getAllProducts } from '@/lib/contentful/api'
 import type { IProductFields } from '@/types/product'
 import type { Entry } from 'contentful'
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/Card/Card'
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription
+} from '@/components/ui/Card/Card'
 import { Typography } from '@/components/ui/Typography/Typography'
 import { HOME, PRODUCTS } from '@/contants/routes'
 

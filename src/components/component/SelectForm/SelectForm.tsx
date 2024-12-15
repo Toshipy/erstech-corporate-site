@@ -1,5 +1,16 @@
-import { FormField, FormItem, FormControl, FormMessage } from '@/components/ui/Form/Form'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/Select/Select'
+import {
+  FormField,
+  FormItem,
+  FormControl,
+  FormMessage
+} from '@/components/ui/Form/Form'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@/components/ui/Select/Select'
 import { Typography } from '@/components/ui/Typography/Typography'
 import type { FieldPath, Control, FieldValues } from 'react-hook-form'
 

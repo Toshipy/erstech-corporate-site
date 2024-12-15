@@ -1,7 +1,12 @@
 import React from 'react'
 import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/Card/Card'
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription
+} from '@/components/ui/Card/Card'
 import { Typography } from '@/components/ui/Typography/Typography'
 import { PRODUCTS } from '@/contants/routes'
 import { Button } from '@/components/ui/Button/Button'
