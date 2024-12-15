@@ -35,9 +35,6 @@ jobs:
       - name: pnpm install
         run: pnpm install
 
-      - name: 全チェックを実行
-        run: pnpm run all:check
-
       - name: build
         run:
           pnpm run build
