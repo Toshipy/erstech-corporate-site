@@ -1,6 +1,6 @@
 'use client'
 
-import { PRODUCTS } from '@/contants/routes'
+import { HOME, PRODUCTS } from '@/contants/routes'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 

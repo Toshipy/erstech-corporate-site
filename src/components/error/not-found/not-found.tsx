@@ -1,8 +1,8 @@
 import type { FC } from 'react'
 import Link from 'next/link'
-import { HOME } from '@/lib/constants/routes'
 import { Typography } from '@/components/ui/Typography/Typography'
 import { Button } from '@/components/ui/Button/Button'
+import { HOME } from '@/contants/routes'
 
 export const NotFound: FC = () => (
   <div className="flex h-screen flex-col items-center justify-center gap-4">
