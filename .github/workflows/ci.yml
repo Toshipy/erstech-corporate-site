@@ -32,12 +32,20 @@ jobs:
         with:
           version: 9.12.3
 
+      - name: node_modulesをキャッシュ
+        uses: actions/cache@v4
+        id: pnpm-cache
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: './node_modules'
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+
       - name: pnpm install
         run: pnpm install
 
       - name: build
-        run:
-          pnpm run build
+        run: pnpm run build
 
       - name: deploy
         uses: amondnet/vercel-action@v20
