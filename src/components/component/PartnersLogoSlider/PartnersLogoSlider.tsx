@@ -1,8 +1,6 @@
 'use client'
+import { Typography } from '@/components/ui/Typography/Typography'
 import Image from 'next/image'
-
-import { Typography } from '@/components/ui'
-import Slider from 'react-slick'
 
 export const PartnersLogoSlider = () => {
   const settings = {
@@ -20,28 +18,28 @@ export const PartnersLogoSlider = () => {
       {
         breakpoint: 1540,
         settings: {
-          slidesToShow: 5,
-        },
+          slidesToShow: 5
+        }
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
-        },
+          slidesToShow: 4
+        }
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 3,
-        },
+          slidesToShow: 3
+        }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
-        },
-      },
-    ],
+          slidesToShow: 2
+        }
+      }
+    ]
   }
 
   const images = [
@@ -53,7 +51,7 @@ export const PartnersLogoSlider = () => {
     'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_6.png',
     'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_7.png',
     'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_8.png',
-    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_9.png',
+    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_9.png'
     // '/company/company_1.png',
     // '/company/company_2.png',
     // '/company/company_3.png',
@@ -72,9 +70,9 @@ export const PartnersLogoSlider = () => {
       </div>
       <Slider {...settings}>
         {images.map((src: string, index: number) => (
-          <div key={index} className="card-cover p-4">
+          <div className="card-cover p-4" key={index}>
             <div className="card">
-              <Image alt="" src={src} fill className="img" />
+              <Image alt="" className="img" fill src={src} />
             </div>
           </div>
         ))}

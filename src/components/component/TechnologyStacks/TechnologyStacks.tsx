@@ -1,5 +1,4 @@
 import React from 'react'
-import { Typography, ScrollArea } from '@/components/index'
 import {
   SiAmazonwebservices,
   SiAtlassian,
@@ -24,19 +23,21 @@ import {
   SiTerraform,
   SiTrello,
   SiTypescript,
-  SiVercel,
+  SiVercel
 } from '@icons-pack/react-simple-icons'
+import { ScrollArea } from '@/components/ui/ScrollArea/ScrollArea'
+import { Typography } from '@/components/ui/Typography/Typography'
 
 export const TechnologyStacks = () => {
   return (
-    <ScrollArea className="h-full w-full bg-background px-12">
+    <ScrollArea className="bg-background h-full w-full px-12">
       <div className="px-12 pt-12">
         <Typography variant="4xl">TechnologyStacks</Typography>
         <div className="mt-4 grid grid-cols-2 gap-6 py-6">
           <div className="rounded-lg bg-gray-800 p-4 shadow-lg">
             <Typography
-              variant="xl"
               className="mb-4 text-xl font-bold text-white"
+              variant="xl"
             >
               Languages
             </Typography>
@@ -70,8 +71,8 @@ export const TechnologyStacks = () => {
 
           <div className="rounded-lg bg-gray-800 p-4 shadow-lg">
             <Typography
-              variant="xl"
               className="mb-4 text-xl font-bold text-white"
+              variant="xl"
             >
               Framework
             </Typography>
@@ -97,8 +98,8 @@ export const TechnologyStacks = () => {
 
           <div className="rounded-lg bg-gray-800 p-4 shadow-lg">
             <Typography
-              variant="xl"
               className="mb-4 text-xl font-bold text-white"
+              variant="xl"
             >
               Infrastructure
             </Typography>
@@ -136,8 +137,8 @@ export const TechnologyStacks = () => {
 
           <div className="rounded-lg bg-gray-800 p-4 shadow-lg">
             <Typography
-              variant="xl"
               className="mb-4 text-xl font-bold text-white"
+              variant="xl"
             >
               Others
             </Typography>

@@ -1,7 +1,7 @@
-import { EntrySkeletonType } from 'contentful'
+import type { EntrySkeletonType } from 'contentful'
 
-export interface IProductFields extends EntrySkeletonType {
+export type IProductFields = {
   id: string
   title: string
   description: string
-}
+} & EntrySkeletonType

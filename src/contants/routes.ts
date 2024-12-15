@@ -8,24 +8,24 @@ export const CONTACT = '/contact'
 export const ERSTECH_ROUTES = [
   {
     href: `${ABOUT}`,
-    label: 'Who we are',
+    label: 'Who we are'
   },
   {
     href: `${SERVICE}`,
-    label: 'Service',
+    label: 'Service'
   },
   {
     href: `${PRODUCTS}`,
-    label: 'Products',
+    label: 'Products'
   },
   {
     href: `${CAREERS}`,
-    label: 'Careers',
+    label: 'Careers'
   },
   {
     href: `${CONTACT}`,
-    label: 'Contact us',
-  },
+    label: 'Contact us'
+  }
 ]
 
 export type ROUTES =

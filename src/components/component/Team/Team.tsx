@@ -1,23 +1,22 @@
 'use client'
 
-import { Typography } from '@/components/ui'
-import { AnimatePresence, motion } from 'framer-motion'
-import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { X } from 'lucide-react'
-import { Entry } from 'contentful'
-import { IMemberFields } from '@/types/member'
-import { Asset } from 'contentful'
+import Image from 'next/image'
+import { Typography } from '@/components/ui/Typography/Typography'
+import type { IMemberFields } from '@/types/member'
+import type { Asset } from 'contentful'
+import type { Entry } from 'contentful'
 
 type Props = {
   teamMembers: Entry<IMemberFields>[]
 }
 
 export const Team: React.FC<Props> = ({ teamMembers }) => {
-
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const selectedMember =
-    teamMembers && teamMembers.find((member) => member.sys.id === selectedId)
+    teamMembers && teamMembers.find(member => member.sys.id === selectedId)
 
   useEffect(() => {
     if (selectedId) {
@@ -31,12 +30,12 @@ export const Team: React.FC<Props> = ({ teamMembers }) => {
     }
   }, [selectedId])
 
-  const isAsset = (image: any): image is Asset => {
+  const isAsset = (image: unknown): image is Asset => {
     return (
-      image &&
+      image != null &&
       typeof image === 'object' &&
       'fields' in image &&
-      'file' in image.fields
+      'file' in (image as Asset).fields
     )
   }
 
@@ -47,20 +46,14 @@ export const Team: React.FC<Props> = ({ teamMembers }) => {
       </div>
       <div className="grid grid-cols-1 justify-items-center sm:grid-cols-3 md:grid-cols-3">
         {teamMembers &&
-          teamMembers.map((member, index) => (
+          teamMembers.map((member, _index) => (
             <motion.div
+              className="flex w-[300px] flex-col items-center rounded-lg bg-gray-100 p-4"
               key={member.sys.id}
               layoutId={member.sys.id}
-              className="flex w-[300px] flex-col items-center rounded-lg bg-gray-100 p-4"
               onClick={() => setSelectedId(member.sys.id)}
             >
               <Image
-                src={
-                  isAsset(member.fields.image) &&
-                  member.fields.image?.fields.file?.url
-                    ? `https:${member.fields.image.fields.file.url}`
-                    : ''
-                }
                 alt={
                   isAsset(member.fields.image) &&
                   typeof member.fields.image.fields.description === 'string'
@@ -69,15 +62,21 @@ export const Team: React.FC<Props> = ({ teamMembers }) => {
                 }
                 className="h-100 w-100 rounded-lg border border-gray-300 object-cover"
                 height={300}
+                src={
+                  isAsset(member.fields.image) &&
+                  member.fields.image?.fields.file?.url
+                    ? `https:${member.fields.image.fields.file.url}`
+                    : ''
+                }
                 width={300}
               />
               <motion.div>
-                <Typography variant="xl" className="pt-2">
+                <Typography className="pt-2" variant="xl">
                   {typeof member.fields.name == 'string'
                     ? member.fields.name
                     : ''}
                 </Typography>
-                <Typography variant="sm" className="text-slate-500">
+                <Typography className="text-slate-500" variant="sm">
                   {typeof member.fields.department == 'string'
                     ? member.fields.department
                     : ''}
@@ -89,28 +88,22 @@ export const Team: React.FC<Props> = ({ teamMembers }) => {
       <AnimatePresence>
         {selectedId && selectedMember && (
           <motion.div
-            layoutId={selectedId}
             className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm"
+            layoutId={selectedId}
             onClick={() => setSelectedId(null)}
           >
             <motion.div
               className="relative h-[80%] w-[80%] overflow-y-auto rounded-lg bg-white p-6"
-              onClick={(e) => e.stopPropagation()}
+              onClick={e => e.stopPropagation()}
             >
               <motion.button
-                onClick={() => setSelectedId(null)}
                 className="absolute right-2 top-2 rounded-lg bg-slate-200 p-4 hover:bg-slate-400"
+                onClick={() => setSelectedId(null)}
               >
                 <X />
               </motion.button>
               <div className="flex space-x-4 border-b-2 border-slate-200 p-7">
                 <Image
-                  src={
-                    isAsset(selectedMember.fields.image) &&
-                    selectedMember.fields.image?.fields.file?.url
-                      ? `https:${selectedMember.fields.image.fields.file.url}`
-                      : ''
-                  }
                   alt={
                     isAsset(selectedMember.fields.image) &&
                     typeof selectedMember.fields.image.fields.description ===
@@ -120,21 +113,27 @@ export const Team: React.FC<Props> = ({ teamMembers }) => {
                   }
                   className="h-100 w-100 rounded-lg border border-gray-300 object-cover"
                   height={200}
+                  src={
+                    isAsset(selectedMember.fields.image) &&
+                    selectedMember.fields.image?.fields.file?.url
+                      ? `https:${selectedMember.fields.image.fields.file.url}`
+                      : ''
+                  }
                   width={200}
                 />
                 <div className="flex-col space-y-1">
-                  <Typography variant="xl" className="pt-4">
+                  <Typography className="pt-4" variant="xl">
                     {typeof selectedMember.fields.name == 'string'
                       ? selectedMember.fields.name
                       : ''}
                   </Typography>
-                  <Typography variant="sm" className="text-slate-500">
+                  <Typography className="text-slate-500" variant="sm">
                     {typeof selectedMember.fields.department == 'string'
                       ? selectedMember.fields.department
                       : ''}
                   </Typography>
                   <div className="py-4">
-                    <Typography variant="sm" className="">
+                    <Typography className="" variant="sm">
                       {typeof selectedMember.fields.message == 'string'
                         ? selectedMember.fields.message
                         : ''}
@@ -144,7 +143,7 @@ export const Team: React.FC<Props> = ({ teamMembers }) => {
               </div>
               <div className="py-5">
                 <div className="px-7">
-                  <Typography variant="2xl" className="font-bold">
+                  <Typography className="font-bold" variant="2xl">
                     Recent Posts.
                   </Typography>
                 </div>

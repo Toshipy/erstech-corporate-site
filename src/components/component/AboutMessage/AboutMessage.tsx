@@ -1,12 +1,12 @@
-import { Typography } from '@/components/ui'
-import { HOME, ABOUT } from '@/contants'
 import Link from 'next/link'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
+  AccordionTrigger
 } from '@/components/ui/Accordion/Accordion'
+import { Typography } from '@/components/ui/Typography/Typography'
+import { HOME, ABOUT } from '@/contants/routes'
 
 export const AboutMessage: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ export const AboutMessage: React.FC = () => {
       <div>
         <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
         &gt;
-        <Link href={`${ABOUT}`} className="font-bold">
+        <Link className="font-bold" href={`${ABOUT}`}>
           &nbsp;&nbsp;Who we are
         </Link>
       </div>

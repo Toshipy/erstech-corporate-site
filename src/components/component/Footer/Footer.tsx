@@ -1,10 +1,8 @@
-// import Image from 'next/image'
+import { Logo } from '@/components/ui/Logo/Logo'
+import { Typography } from '@/components/ui/Typography/Typography'
+import { HOME } from '@/contants/routes'
 import Link from 'next/link'
 import 'remixicon/fonts/remixicon.css'
-import { HOME } from '@/contants'
-import { Logo } from '@/components'
-
-import { Button, Typography } from '@/components'
 
 export const Footer: React.FC = () => {
   return (
@@ -21,37 +19,19 @@ export const Footer: React.FC = () => {
         </Typography>
       </div>
       <div className="flex justify-between px-10">
-        {/* <div className="flex-col items-center space-y-2">
-          <Typography variant="2xl" className="font-serif text-white">
-            MENU
-          </Typography>
-          <ul className="space-y-2">
-            {ERSTECH_ROUTES.map((route) => (
-              <li key={route.href}>
-                <Button variant="ghost">
-                  <Link href={route.href}>
-                    <Typography className="font-serif text-white">
-                      {route.label}
-                    </Typography>
-                  </Link>
-                </Button>
-              </li>
-            ))}
-          </ul>
-        </div> */}
         <div className="flex flex-col items-center space-y-2">
-          <Typography variant="2xl" className="font-serif text-white">
+          <Typography className="font-serif text-white" variant="2xl">
             SOCIAL
           </Typography>
           <ul className="flex flex-col space-y-2">
             <li>
               <Link href="https://github.com/{GitHubName}">
-                <i className="ri-github-fill text-4xl text-white"></i>
+                <i className="ri-github-fill text-4xl text-white" />
               </Link>
             </li>
             <li>
               <Link href="https://twitter.com/">
-                <i className="ri-twitter-fill text-4xl text-white"></i>
+                <i className="ri-twitter-fill text-4xl text-white" />
               </Link>
             </li>
           </ul>

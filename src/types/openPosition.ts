@@ -1,6 +1,6 @@
-import { EntrySkeletonType } from 'contentful'
+import type { EntrySkeletonType } from 'contentful'
 
-export interface IOpenPositionFields extends EntrySkeletonType {
+export type IOpenPositionFields = {
   id: string
   position: string
   positionKana?: string
@@ -14,4 +14,4 @@ export interface IOpenPositionFields extends EntrySkeletonType {
   sys?: {
     id: string
   }
-}
+} & EntrySkeletonType

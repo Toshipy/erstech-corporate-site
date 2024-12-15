@@ -1,10 +1,10 @@
-import { z } from 'zod'
-import { ContactMessage } from '@/types'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-// import { useToast } from '@/hooks/use-toast'
-import { toast } from 'sonner'
+import { ContactMessage } from '@/types/contactMessage'
 import emailjs from '@emailjs/browser'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
+import type { z } from 'zod'
+// import { useToast } from '@/hooks/use-toast'
 
 type EmailTemplateParams = {
   inquiryType: string
@@ -19,7 +19,7 @@ const formSchema = ContactMessage.pick({
   inquiryType: true,
   name: true,
   email: true,
-  content: true,
+  content: true
 })
 
 export const useContactForm = () => {
@@ -35,21 +35,21 @@ export const useContactForm = () => {
         {
           publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY!,
           limitRate: {
-            throttle: 5000, // you cannot send more than 1 email per 5 seconds
-          },
-        },
+            throttle: 5000 // you cannot send more than 1 email per 5 seconds
+          }
+        }
       )
       .then(
         () => {
           toast.success('メッセージの送信を受け付けつけました！', {
-            id: toastId,
+            id: toastId
           })
         },
         () => {
           toast.error('エラーが発生しました。もう一度お試しください。', {
-            id: toastId,
+            id: toastId
           })
-        },
+        }
       )
   }
 
@@ -59,12 +59,12 @@ export const useContactForm = () => {
       inquiryType: 'other',
       name: '',
       email: '',
-      content: '',
+      content: ''
     },
     resetOptions: {
-      keepDefaultValues: true,
+      keepDefaultValues: true
     },
-    mode: 'onChange',
+    mode: 'onChange'
   })
 
   const onSubmit = async (values: FormType) => {
@@ -72,7 +72,7 @@ export const useContactForm = () => {
       inquiryType: values.inquiryType,
       name: values.name,
       email: values.email,
-      content: values.content,
+      content: values.content
     }
 
     sendEmail(data)
@@ -106,6 +106,6 @@ export const useContactForm = () => {
     onSubmit,
     isSubmitting: form.formState.isSubmitting,
     isValid: form.formState.isValid,
-    isDirty: form.formState.isDirty,
+    isDirty: form.formState.isDirty
   }
 }

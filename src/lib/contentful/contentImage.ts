@@ -1,5 +1,5 @@
-import { Asset, AssetLink } from 'contentful'
-export interface ContentImage {
+import type { Asset, AssetLink } from 'contentful'
+export type ContentImage = {
   src: string
   alt: string
   width: number
@@ -7,7 +7,7 @@ export interface ContentImage {
 }
 
 export function parseContentfulContentImage(
-  asset?: Asset<undefined, string> | { sys: AssetLink },
+  asset?: Asset<undefined, string> | { sys: AssetLink }
 ): ContentImage | null {
   if (!asset) {
     return null
@@ -21,6 +21,6 @@ export function parseContentfulContentImage(
     src: asset.fields.file?.url || '',
     alt: asset.fields.description || '',
     width: asset.fields.file?.details.image?.width || 0,
-    height: asset.fields.file?.details.image?.height || 0,
+    height: asset.fields.file?.details.image?.height || 0
   }
 }

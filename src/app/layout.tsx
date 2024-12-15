@@ -1,14 +1,15 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { ThemeProvider, Toaster } from '@/components/index'
 import Script from 'next/script'
+import { ThemeProvider } from '@/components/ui/ThemeProvider/ThemeProvider'
+import { Toaster } from '@/components/ui/Toast/Toaster'
 
 export const metadata: Metadata = {
-  title: 'Erstech corporate-site',
+  title: 'Erstech corporate-site'
 }
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode
 }>) {
@@ -18,12 +19,10 @@ export default function RootLayout({
       <head>
         {/* Google Analytics */}
         <Script
-          strategy="afterInteractive"
           src={`"https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}"`}
+          strategy="afterInteractive"
         />
         <Script
-          id="gtag-init"
-          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -32,16 +31,18 @@ export default function RootLayout({
               gtag('config', '${GA_MEASUREMENT_ID}', {
                 page_path: window.location.pathname,
               });
-            `,
+            `
           }}
+          id="gtag-init"
+          strategy="afterInteractive"
         />
       </head>
       <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
-          enableSystem
           disableTransitionOnChange
+          enableSystem
         >
           <main>{children}</main>
           <Toaster />
