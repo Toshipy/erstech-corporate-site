@@ -40,3 +40,8 @@ next-env.d.ts
 .vscode
 public
 .env
+
+# storybook
+storybook-static
+*storybook.log
+__screenshots__

@@ -74,7 +74,6 @@
     "typescript": "^5"
   },
   "engines": {
-    "node": ">=20.17.0",
     "npm": "use pnpm",
     "yarn": "use pnpm",
     "pnpm": ">=9.8.0"
