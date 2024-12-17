@@ -63,8 +63,8 @@ export const Header = () => {
                 </Typography>
               </Link>
             </div>
-            <NavigationMenu className="ml-20 flex space-x-4">
-              <NavigationMenuList>
+            <NavigationMenu>
+              <NavigationMenuList className="ml-20 flex space-x-4">
                 {ERSTECH_ROUTES.map(route => (
                   <NavigationMenuItem key={route.href}>
                     <Link href={route.href} legacyBehavior passHref>

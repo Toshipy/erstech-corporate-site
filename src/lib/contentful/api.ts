@@ -9,7 +9,8 @@ export async function getAllProducts() {
 
 export async function getAllMembers() {
   const response = await client.getEntries({
-    content_type: 'member'
+    content_type: 'member',
+    order: ['sys.createdAt']
   })
 
   return response.items
