@@ -37,14 +37,14 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body>
+      <body className="flex flex-col min-h-screen">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           disableTransitionOnChange
           enableSystem
         >
-          <main>{children}</main>
+          <main className="flex-grow">{children}</main>
           <Toaster />
         </ThemeProvider>
       </body>
