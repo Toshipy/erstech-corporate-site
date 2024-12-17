@@ -236,6 +236,7 @@ yarn add sonner
 ```
 
 ## Contentful
+
 ```
 yarn add contentful
 ```

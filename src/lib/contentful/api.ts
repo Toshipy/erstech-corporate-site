@@ -2,14 +2,14 @@ import { client } from '@/lib/contentful/contentful'
 
 export async function getAllProducts() {
   const response = await client.getEntries({
-    content_type: 'product',
+    content_type: 'product'
   })
   return response.items
 }
 
 export async function getAllMembers() {
   const response = await client.getEntries({
-    content_type: 'member',
+    content_type: 'member'
   })
 
   return response.items
@@ -17,7 +17,7 @@ export async function getAllMembers() {
 
 export async function getAllOpenPositions() {
   const response = await client.getEntries({
-    content_type: 'openPosition',
+    content_type: 'openPosition'
   })
 
   return response.items

@@ -1,20 +1,21 @@
 import React from 'react'
-import { Typography, ScrollArea } from '@/components/index'
+import Link from 'next/link'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
+  AccordionTrigger
 } from '@/components/ui/Accordion/Accordion'
-import { HOME, SERVICE } from '@/contants'
-import Link from 'next/link'
+import { ScrollArea } from '@/components/ui/ScrollArea/ScrollArea'
+import { Typography } from '@/components/ui/Typography/Typography'
+import { HOME, SERVICE } from '@/contants/routes'
 
 export const ServiceOffer = () => {
   return (
-    <ScrollArea className="h-full w-full bg-background p-12">
+    <ScrollArea className="bg-background h-full w-full p-12">
       <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
       &gt;
-      <Link href={`${SERVICE}`} className="font-bold">
+      <Link className="font-bold" href={`${SERVICE}`}>
         &nbsp;&nbsp;Service
       </Link>
       <div className="px-12 pt-12">

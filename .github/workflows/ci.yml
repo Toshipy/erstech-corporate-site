@@ -1,72 +1,58 @@
-# .github/workflows/ci.yaml
-
-name: CI
-
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+name: Erstech Corporate site CI
 
 on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'eslint.config.mjs'
+      - 'prettier.config.cjs'
+      - 'tsconfig.json'
   push:
     branches:
-      - main
-
+      - develop
 jobs:
-  Deploy-Preview:
+  lint:
     runs-on: ubuntu-latest
-  preview:
-    if: ${{ github.ref != 'refs/heads/release' }}
-    # needs: test
-    runs-on: ubuntu-latest
-    environment:
-      name: preview
-      url: ${{ steps.deploy.outputs.url }}
+    strategy:
+      matrix:
+        node-version: [22.x]
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup node
-        uses: actions/setup-node@v3
+      - name: checkout code
+        uses: actions/checkout@v4
         with:
-          node-version: 22
-          check-latest: true
+          fetch-depth: 0
 
-      - name: Install Vercel CLI
-        run: npm install --global vercel@latest
-
-      - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Build Project Artifacts
-        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Deploy Project Artifacts to Vercel
-        id: deploy
-        run: echo "url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
-
-      - name: Assign staging domain to deployment (if main branch)
-        if: ${{ github.ref == 'refs/heads/main' }}
-        run: vercel alias ${{ steps.deploy.outputs.url }} stg.my-service.com --scope=my-team --token=${{ secrets.VERCEL_TOKEN }}
-
-  Deploy-Production:
-    if: ${{ github.ref == 'refs/heads/release' }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup node
-        uses: actions/setup-node@v3
+      - name: setup nodejs
+        uses: actions/setup-node@v4
         with:
-          node-version: 22
-          check-latest: true
+          node-version: ${{ matrix.node-version }}
 
-      - name: Install Vercel CLI
-        run: npm install --global vercel@latest
+      - name: pnpmをセットアップ
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.12.3
 
-      - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - name: node_modulesをキャッシュ
+        uses: actions/cache@v4
+        id: pnpm-cache
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: './node_modules'
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
 
-      - name: Build Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: パッケージをインストール
+        if: ${{ steps.pnpm-cache.outputs.cache-hit != 'true' }}
+        run: pnpm install
 
-      - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+      - name: 全チェックを実行
+        run: pnpm run all:check
+
+      - name: node_modulesキャッシュを保存
+        if: steps.pnpm-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: './node_modules'
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}

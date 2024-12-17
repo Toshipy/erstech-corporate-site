@@ -1,8 +1,9 @@
-import { Button, Typography } from '@/components/ui'
-import { ABOUT } from '@/contants'
+import React from 'react'
 import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
+import { Typography } from '@/components/ui/Typography/Typography'
+import { ABOUT } from '@/contants/routes'
+import { Button } from '@/components/ui/Button/Button'
 
 export const HeroMessage = () => {
   return (
@@ -20,7 +21,7 @@ export const HeroMessage = () => {
           </Typography>
         </div>
         <div className="mt-10">
-          <Link href={`${ABOUT}`} className="font-bold">
+          <Link className="font-bold" href={`${ABOUT}`}>
             <Button
               className="items-center rounded-full px-10 py-7 hover:bg-slate-500"
               size="lg"

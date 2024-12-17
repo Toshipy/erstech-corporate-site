@@ -1,20 +1,17 @@
 import {
-  FormControl,
   FormField,
   FormItem,
-  FormMessage,
-  Input,
-  Typography,
-} from '@/components/index'
-
+  FormControl,
+  FormMessage
+} from '@/components/ui/Form/Form'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from '@/components/index'
-
+  SelectValue
+} from '@/components/ui/Select/Select'
+import { Typography } from '@/components/ui/Typography/Typography'
 import type { FieldPath, Control, FieldValues } from 'react-hook-form'
 
 type FormFieldProps<TFieldValues extends FieldValues> = {
@@ -30,7 +27,7 @@ export const SelectForm = <TFieldValues extends FieldValues>({
   name,
   label,
   required,
-  placeholder,
+  placeholder
 }: FormFieldProps<TFieldValues>) => {
   return (
     <>
@@ -43,7 +40,7 @@ export const SelectForm = <TFieldValues extends FieldValues>({
         render={({ field }) => (
           <FormItem>
             <FormControl>
-              <Select value={field.value} onValueChange={field.onChange}>
+              <Select onValueChange={field.onChange} value={field.value}>
                 <SelectTrigger className="w-[500px]">
                   <SelectValue placeholder={placeholder} />
                 </SelectTrigger>

@@ -1,6 +1,8 @@
-import { Footer, Header, ProductDetails } from '@/components'
+import { Footer } from '@/components/component/Footer/Footer'
+import { Header } from '@/components/component/Header/Header'
+import { ProductDetails } from '@/components/component/ProductDetails/ProductDetails'
 
-export const runtime = 'edge';
+export const runtime = 'edge'
 
 const ProductDetail = () => {
   return (

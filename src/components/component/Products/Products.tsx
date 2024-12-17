@@ -1,18 +1,17 @@
+import React from 'react'
+import type { NextPage } from 'next'
+import Link from 'next/link'
+import { getAllProducts } from '@/lib/contentful/api'
+import type { IProductFields } from '@/types/product'
+import type { Entry } from 'contentful'
 import {
-  Typography,
   Card,
-  CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui'
-import { HOME, PRODUCTS } from '@/contants'
-import { getAllProducts } from '@/lib/contentful/api'
-import { IProductFields } from '@/types/product'
-import { Entry } from 'contentful'
-import { NextPage } from 'next'
-import Link from 'next/link'
-
-import React from 'react'
+  CardDescription
+} from '@/components/ui/Card/Card'
+import { Typography } from '@/components/ui/Typography/Typography'
+import { HOME, PRODUCTS } from '@/contants/routes'
 
 type Props = {
   products: Entry<IProductFields>[]
@@ -21,11 +20,11 @@ type Props = {
 export const Products: NextPage<Props> = async () => {
   const products = await getAllProducts()
   return (
-    <div className="h-full w-full bg-background p-12">
+    <div className="bg-background h-full w-full p-12">
       <div>
         <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
         &gt;
-        <Link href={`${PRODUCTS}`} className="font-bold">
+        <Link className="font-bold" href={`${PRODUCTS}`}>
           &nbsp;&nbsp;Products
         </Link>
       </div>

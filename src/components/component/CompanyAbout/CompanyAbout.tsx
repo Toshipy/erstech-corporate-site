@@ -1,4 +1,4 @@
-import { Typography } from '@/components'
+import { Typography } from '@/components/ui/Typography/Typography'
 
 export const CompanyAbout: React.FC = () => {
   return (

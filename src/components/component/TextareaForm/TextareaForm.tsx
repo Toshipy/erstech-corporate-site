@@ -1,12 +1,11 @@
 import {
-  FormControl,
   FormField,
   FormItem,
-  FormMessage,
-  Textarea,
-  Typography,
-} from '@/components/index'
-
+  FormControl,
+  FormMessage
+} from '@/components/ui/Form/Form'
+import { Textarea } from '@/components/ui/Textarea/Textarea'
+import { Typography } from '@/components/ui/Typography/Typography'
 import type { FieldPath, Control, FieldValues } from 'react-hook-form'
 
 type FormFieldProps<TFieldValues extends FieldValues> = {
@@ -22,7 +21,7 @@ export const TextareaForm = <TFieldValues extends FieldValues>({
   name,
   label,
   required,
-  placeholder,
+  placeholder
 }: FormFieldProps<TFieldValues>) => {
   return (
     <>

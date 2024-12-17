@@ -1,11 +1,9 @@
+import { forwardRef } from 'react'
+import type { HTMLAttributes } from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cva } from 'class-variance-authority'
-import { forwardRef } from 'react'
-
 import { cn } from '@/lib/utils'
-
 import type { VariantProps } from 'class-variance-authority'
-import type { HTMLAttributes } from 'react'
 
 const typographyVariants = cva('text-text-main', {
   variants: {
@@ -19,12 +17,12 @@ const typographyVariants = cva('text-text-main', {
       lg: 'text-lg leading-normal',
       base: 'text-base leading-normal',
       sm: 'text-sm',
-      xs: 'text-xs',
-    },
+      xs: 'text-xs'
+    }
   },
   defaultVariants: {
-    variant: 'base',
-  },
+    variant: 'base'
+  }
 })
 
 type VariantPropType = VariantProps<typeof typographyVariants>
@@ -42,7 +40,7 @@ const variantElementMap: Record<
   lg: 'div',
   base: 'div',
   sm: 'div',
-  xs: 'div',
+  xs: 'div'
 }
 
 export type Props = {
@@ -63,7 +61,7 @@ const Typography = forwardRef<HTMLElement, Props>(
         {...props}
       />
     )
-  },
+  }
 )
 
 Typography.displayName = 'Typography'

@@ -1,12 +1,11 @@
 import {
-  FormControl,
   FormField,
   FormItem,
-  FormMessage,
-  Input,
-  Typography,
-} from '@/components/index'
-
+  FormControl,
+  FormMessage
+} from '@/components/ui/Form/Form'
+import { Input } from '@/components/ui/Input/Input'
+import { Typography } from '@/components/ui/Typography/Typography'
 import type { FieldPath, Control, FieldValues } from 'react-hook-form'
 
 type FormFieldProps<TFieldValues extends FieldValues> = {
@@ -22,7 +21,7 @@ export const InputForm = <TFieldValues extends FieldValues>({
   name,
   label,
   required,
-  placeholder,
+  placeholder
 }: FormFieldProps<TFieldValues>) => {
   return (
     <>

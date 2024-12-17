@@ -1,29 +1,30 @@
 'use client'
-import { Button, Typography } from '@/components/ui'
 import React from 'react'
-import { SERVICE } from '@/contants'
+import { motion } from 'framer-motion'
 import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { Typography } from '@/components/ui/Typography/Typography'
+import { SERVICE } from '@/contants/routes'
+import { Button } from '@/components/ui/Button/Button'
 
 export const ServiceIntroduction = () => {
   return (
-    <div className="h-full w-full bg-background p-12">
+    <div className="bg-background h-full w-full p-12">
       <div className="px-12">
         <Typography variant="4xl">Service</Typography>
         <div className="mt-6 grid grid-cols-1 place-items-center gap-6 rounded-xl bg-black px-10 py-20 text-white md:px-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 1, delay: 0 }}
           >
-            <Typography variant="4xl" className="">
+            <Typography className="" variant="4xl">
               アイデアを形に
             </Typography>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
             <Typography>
@@ -31,8 +32,8 @@ export const ServiceIntroduction = () => {
             </Typography>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 3, delay: 1 }}
           >
             <Typography>
@@ -40,16 +41,16 @@ export const ServiceIntroduction = () => {
             </Typography>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 3, delay: 1.5 }}
           >
-            <Link href={`${SERVICE}`} className="font-bold">
+            <Link className="font-bold" href={`${SERVICE}`}>
               <Button
                 className="items-center rounded-full bg-white px-10 py-7 hover:bg-slate-300"
                 size="lg"
               >
-                <Typography variant="2xl" className="text-black">
+                <Typography className="text-black" variant="2xl">
                   Our Service
                 </Typography>
                 <MoveRight className="ml-3 space-x-2 text-black" />

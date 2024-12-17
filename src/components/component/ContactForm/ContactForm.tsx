@@ -1,21 +1,25 @@
 'use client'
 import { Loader2 } from 'lucide-react'
-import { useContactForm } from '@/components/component/ContactForm/useContactForm'
-import { InputForm, SelectForm, TextareaForm } from '@/components/index'
-
-import { Typography, Form, ScrollArea, Button } from '@/components/ui'
 import Link from 'next/link'
-import { HOME, CONTACT } from '@/contants'
 import { Toaster } from 'sonner'
+import { useContactForm } from '@/components/component/ContactForm/useContactForm'
+import { Form } from '@/components/ui/Form/Form'
+import { ScrollArea } from '@/components/ui/ScrollArea/ScrollArea'
+import { Typography } from '@/components/ui/Typography/Typography'
+import { Button } from '@/components/ui/Button/Button'
+import { InputForm } from '../InputForm/InputForm'
+import { SelectForm } from '../SelectForm/SelectForm'
+import { TextareaForm } from '../TextareaForm/TextareaForm'
+import { HOME, CONTACT } from '@/contants/routes'
 
 export const ContactForm: React.FC = () => {
   const { form, onSubmit, isSubmitting, isValid, isDirty } = useContactForm()
   return (
-    <ScrollArea className="h-full w-full bg-background p-12">
-      <Toaster richColors={true} />
+    <ScrollArea className="bg-background h-full w-full p-12">
+      <Toaster richColors />
       <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
       &gt;
-      <Link href={`${CONTACT}`} className="font-bold">
+      <Link className="font-bold" href={`${CONTACT}`}>
         &nbsp;&nbsp;Contact
       </Link>
       <div className="px-12 pt-12">
@@ -67,11 +71,11 @@ export const ContactForm: React.FC = () => {
             </div>
             <div className="flex justify-center py-5">
               <Button
-                disabled={isSubmitting || !isValid || !isDirty}
                 className="w-[200px] rounded-lg py-5"
-                variant="default"
+                disabled={isSubmitting || !isValid || !isDirty}
                 size="default"
                 type="submit"
+                variant="default"
               >
                 {isSubmitting && (
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
