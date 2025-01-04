@@ -1,13 +1,19 @@
 'use client'
-import React from 'react'
+import type { FC } from 'react'
 import { motion } from 'framer-motion'
 import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
 import { Typography } from '@/components/ui/Typography/Typography'
 import { SERVICE } from '@/contants/routes'
 import { Button } from '@/components/ui/Button/Button'
+import type { Entry } from 'contentful'
+import type { IServiceFields } from '@/types/service'
 
-export const ServiceIntroduction = () => {
+type Props = {
+  service: Entry<IServiceFields>[]
+}
+
+export const ServiceIntroduction: FC<Props> = ({ service }) => {
   return (
     <div className="bg-background h-full w-full p-12">
       <div className="px-12">
@@ -19,7 +25,9 @@ export const ServiceIntroduction = () => {
             transition={{ duration: 1, delay: 0 }}
           >
             <Typography className="" variant="4xl">
-              アイデアを形に
+              {typeof service[0].fields.title === 'string'
+                ? service[0].fields.title
+                : ''}
             </Typography>
           </motion.div>
           <motion.div
@@ -28,7 +36,9 @@ export const ServiceIntroduction = () => {
             transition={{ duration: 1, delay: 0.5 }}
           >
             <Typography>
-              私たちはソフトウェアの力で、人々の体験により良い価値を提供します。
+              {typeof service[0].fields.description === 'string'
+                ? service[0].fields.description
+                : ''}
             </Typography>
           </motion.div>
           <motion.div
@@ -37,11 +47,14 @@ export const ServiceIntroduction = () => {
             transition={{ duration: 3, delay: 1 }}
           >
             <Typography>
-              デザインの視点と最新のテクノロジーを駆使して、革新的で心地よいユーザー体験を創造します。
+              {typeof service[0].fields.mission === 'string'
+                ? service[0].fields.mission
+                : ''}
             </Typography>
           </motion.div>
           <motion.div
             animate={{ opacity: 1, y: 0 }}
+            className="mt-4 flex justify-center"
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 3, delay: 1.5 }}
           >

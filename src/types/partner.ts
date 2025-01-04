@@ -1,9 +1,7 @@
 import type { Asset, EntrySkeletonType } from 'contentful'
 
-export type IMemberFields = {
+export type IPartnerFields = {
   id: string
   name: string
-  department?: string
-  message?: string
   image: Asset | null | undefined
 } & EntrySkeletonType

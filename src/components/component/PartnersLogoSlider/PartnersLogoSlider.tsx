@@ -7,15 +7,23 @@ import {
 } from '@/components/ui/Carousel/Carousel'
 import { Typography } from '@/components/ui/Typography/Typography'
 import Autoplay from 'embla-carousel-autoplay'
+import type { Asset, Entry } from 'contentful'
+import type { IPartnerFields } from '@/types/partner'
+import type { FC } from 'react'
 
-export const PartnersLogoSlider = () => {
-  const images = [
-    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_1.png',
-    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_2.png',
-    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_3.png',
-    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_4.png',
-    'https://erstech-corporate-site.s3.ap-northeast-1.amazonaws.com/company/company_5.png'
-  ]
+type Props = {
+  partners: Entry<IPartnerFields>[]
+}
+
+export const PartnersLogoSlider: FC<Props> = ({ partners }) => {
+  const isAsset = (image: unknown): image is Asset => {
+    return (
+      image != null &&
+      typeof image === 'object' &&
+      'fields' in image &&
+      'file' in (image as Asset).fields
+    )
+  }
 
   return (
     <div className="px-12 pb-12">
@@ -34,19 +42,26 @@ export const PartnersLogoSlider = () => {
         ]}
       >
         <CarouselContent>
-          {images.map((src: string, index: number) => (
-            <CarouselItem className="basis-1/3" key={index}>
-              <Card className="flex items-center justify-center h-[300px]">
-                <CardContent className="flex items-center justify-center p-6 h-full">
-                  <img
-                    alt=""
-                    className="w-full h-full object-contain"
-                    src={src}
-                  />
-                </CardContent>
-              </Card>
-            </CarouselItem>
-          ))}
+          {partners &&
+            partners.map((partner, _index) => (
+              <CarouselItem className="basis-1/3" key={partner.sys.id}>
+                <Card className="flex items-center justify-center h-[300px]">
+                  <CardContent className="flex items-center justify-center p-6 h-full">
+                    <img
+                      alt=""
+                      className="w-full h-full object-contain"
+                      src={
+                        isAsset(partner.fields.image) &&
+                        typeof partner.fields.image?.fields.file?.url ===
+                          'string'
+                          ? partner.fields.image.fields.file.url
+                          : ''
+                      }
+                    />
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
         </CarouselContent>
       </Carousel>
     </div>
