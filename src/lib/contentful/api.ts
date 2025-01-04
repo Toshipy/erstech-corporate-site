@@ -31,3 +31,11 @@ export async function getAllPartners() {
 
   return response.items
 }
+
+export async function getAllService() {
+  const response = await client.getEntries({
+    content_type: 'service'
+  })
+
+  return response.items
+}

@@ -4,17 +4,18 @@ import { HeroMessage } from '@/components/component/HeroMessage/HeroMessage'
 import { PartnersLogoSlider } from '@/components/component/PartnersLogoSlider/PartnersLogoSlider'
 import { ProductsIntroduction } from '@/components/component/ProductsIntroduction/ProductsIntroduction'
 import { ServiceIntroduction } from '@/components/component/ServiceIntroduction/ServiceIntroduction'
-import { getAllPartners } from '@/lib/contentful/api'
+import { getAllPartners, getAllService } from '@/lib/contentful/api'
 
 export default async function Home() {
   const partners = await getAllPartners()
+  const service = await getAllService()
 
   return (
     <>
       <Header />
       <HeroMessage />
       <PartnersLogoSlider partners={partners} />
-      <ServiceIntroduction />
+      <ServiceIntroduction service={service} />
       <ProductsIntroduction />
       <Footer />
     </>
