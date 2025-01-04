@@ -23,3 +23,11 @@ export async function getAllOpenPositions() {
 
   return response.items
 }
+
+export async function getAllPartners() {
+  const response = await client.getEntries({
+    content_type: 'partner'
+  })
+
+  return response.items
+}
