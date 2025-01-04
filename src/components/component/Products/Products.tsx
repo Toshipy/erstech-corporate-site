@@ -44,12 +44,12 @@ export const Products: NextPage<Props> = async () => {
                         <CardTitle className="mb-4">
                           {typeof product.fields.title === 'string'
                             ? product.fields.title
-                            : 'No Title'}
+                            : ''}
                         </CardTitle>
                         <CardDescription>
                           {typeof product.fields.description === 'string'
                             ? product.fields.description
-                            : 'No Description'}
+                            : ''}
                         </CardDescription>
                       </CardHeader>
                     </Card>
