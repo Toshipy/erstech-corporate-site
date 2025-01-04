@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import { type FC, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button/Button'
@@ -19,7 +19,7 @@ type Props = {
   openPositions: Entry<IOpenPositionFields>[]
 }
 
-export const CareersInfo: React.FC<Props> = ({ openPositions }) => {
+export const CareersInfo: FC<Props> = ({ openPositions }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedCard, setSelectedCard] =
     useState<Partial<IOpenPositionFields>>()
@@ -42,9 +42,6 @@ export const CareersInfo: React.FC<Props> = ({ openPositions }) => {
   const infraEngineers = openPositions.filter(
     openPosition => openPosition.fields.position === 'Infra Engineer'
   )
-  // const devOpsSreEngineers = openPositions.filter(
-  //   (openPosition) => openPosition.fields.position === 'DevOps/SRE Engineer',
-  // )
 
   useEffect(() => {
     if (isModalOpen) {
@@ -148,33 +145,6 @@ export const CareersInfo: React.FC<Props> = ({ openPositions }) => {
               </Card>
             ))}
           </div>
-
-          {/* DevOps Engineers */}
-          {/* <Typography variant="3xl" className="mt-12">
-            DevOps/SRE Engineers
-          </Typography>
-          <div className="mt-5 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {devOpsSreEngineers.map((openPosition, index) => (
-              <Card
-                className="flex h-full cursor-pointer flex-col justify-between bg-white shadow-lg hover:bg-slate-200"
-                key={index}
-                onClick={() => handleCardClick(openPosition)}
-              >
-                <CardHeader>
-                  <CardTitle>
-                    {typeof openPosition.fields.position == 'string'
-                      ? openPosition.fields.position
-                      : ''}
-                  </CardTitle>
-                  <CardDescription>
-                    {typeof openPosition.fields.employmentType == 'string'
-                      ? openPosition.fields.employmentType
-                      : ''}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div> */}
         </div>
       </div>
       {isModalOpen && selectedCard && (

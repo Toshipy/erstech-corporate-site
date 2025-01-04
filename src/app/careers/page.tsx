@@ -4,7 +4,7 @@ import { Footer } from '@/components/component/Footer/Footer'
 import { getAllOpenPositions } from '@/lib/contentful/api'
 import { Header } from '@/components/component/Header/Header'
 
-const CareersPage = async () => {
+export const CareersPage = async () => {
   const openPositions = await getAllOpenPositions()
 
   return (
@@ -15,5 +15,3 @@ const CareersPage = async () => {
     </>
   )
 }
-
-export default CareersPage
