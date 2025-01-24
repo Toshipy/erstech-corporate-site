@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { type FC } from 'react'
 import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
 import { Typography } from '@/components/ui/Typography/Typography'
 import { ABOUT } from '@/contants/routes'
 import { Button } from '@/components/ui/Button/Button'
+import type { Entry } from 'contentful'
+import type { IHeroMessageFields } from '@/types/heroMessage'
 
-export const HeroMessage = () => {
+type Props = {
+  message: Entry<IHeroMessageFields>[]
+}
+
+export const HeroMessage: FC<Props> = ({ message }) => {
   return (
     <div className="p-12">
       <div className="relative w-full flex-col items-center justify-center p-12">
@@ -13,11 +19,15 @@ export const HeroMessage = () => {
           className="font-serif font-medium text-slate-500"
           variant="6xl"
         >
-          Something inspiring.
+          {typeof message[0].fields.heroHeading === 'string'
+            ? message[0].fields.heroHeading
+            : ''}
         </Typography>
         <div className="mt-6">
           <Typography variant="xl">
-            私たちは、モダンなテクノロジーを駆使し、企業のビジネス成長を力強く後押しします。
+            {typeof message[0].fields.heroSubHeading === 'string'
+              ? message[0].fields.heroSubHeading
+              : ''}
           </Typography>
         </div>
         <div className="mt-10">

@@ -39,3 +39,11 @@ export async function getAllService() {
 
   return response.items
 }
+
+export async function getHeroMessage() {
+  const response = await client.getEntries({
+    content_type: 'heroMessage'
+  })
+
+  return response.items
+}
