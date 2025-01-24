@@ -7,18 +7,22 @@ import { ServiceIntroduction } from '@/components/component/ServiceIntroduction/
 import {
   getAllPartners,
   getAllProducts,
-  getAllService
+  getAllService,
+  getHeroMessage
 } from '@/lib/contentful/api'
 
 export default async function Home() {
-  const partners = await getAllPartners()
-  const service = await getAllService()
-  const products = await getAllProducts()
+  const [partners, service, products, message] = await Promise.all([
+    getAllPartners(),
+    getAllService(),
+    getAllProducts(),
+    getHeroMessage()
+  ])
 
   return (
     <>
       <Header />
-      <HeroMessage />
+      <HeroMessage message={message} />
       <PartnersLogoSlider partners={partners} />
       <ServiceIntroduction service={service} />
       <ProductsIntroduction products={products} />
