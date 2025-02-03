@@ -71,3 +71,11 @@ export async function getWhoWeAre() {
 
   return response.items
 }
+
+export async function getServiceOffer() {
+  const response = await client.getEntries({
+    content_type: 'serviceWeOffer'
+  })
+
+  return response.items
+}

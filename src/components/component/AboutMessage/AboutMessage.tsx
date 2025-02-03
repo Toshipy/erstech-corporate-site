@@ -66,11 +66,8 @@ export const AboutMessage: FC<Props> = ({ whoWeAres, missions }) => {
       </div>
       <div className="px-12 py-6">
         <Accordion type="multiple">
-          {sections.map((section, _index) => (
-            <AccordionItem
-              key={section.title_en}
-              value={section.title_en.toLowerCase()}
-            >
+          {sections.map((section, index) => (
+            <AccordionItem key={index} value={section.title_en.toLowerCase()}>
               <div className="flex flex-col">
                 <div>
                   <Typography className="py-2 text-gray-400" variant="xs">

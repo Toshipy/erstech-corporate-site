@@ -7,10 +7,26 @@ import {
 import { ScrollArea } from '@/components/ui/ScrollArea/ScrollArea'
 import { Typography } from '@/components/ui/Typography/Typography'
 import { HOME, SERVICE } from '@/contants/routes'
+import { IServiceWeOfferFields, Section } from '@/types/serviceWeOffer'
+import type { Entry } from 'contentful'
 import Link from 'next/link'
-import React from 'react'
+import React, { FC } from 'react'
 
-export const ServiceOffer = () => {
+type Props = {
+  serviceOffer: Entry<IServiceWeOfferFields>[]
+}
+
+export const ServiceOffer: FC<Props> = ({ serviceOffer }) => {
+  const service = serviceOffer[0]
+  if (!service) return null
+
+  const { subtitle, section } = service.fields
+  if (!section) return null
+
+  const sections = (Array.isArray(section)
+    ? section
+    : []) as unknown as Section[]
+
   return (
     <ScrollArea className="bg-background h-full w-full p-12">
       <Link href={`${HOME}`}>Home&nbsp;&nbsp;</Link>
@@ -19,61 +35,25 @@ export const ServiceOffer = () => {
         &nbsp;&nbsp;Service
       </Link>
       <div className="px-12 pt-12">
-        <Typography variant="4xl">Service we offer</Typography>
+        <Typography variant="4xl">{subtitle?.toString()}</Typography>
       </div>
       <div className="px-12 py-6">
         <Accordion type="multiple">
-          <AccordionItem value="user-centered design">
-            <div className="flex flex-col">
-              <div>
-                <Typography className="py-2 text-gray-400" variant="xs">
-                  Agile Development
-                </Typography>
+          {sections.map((section, index) => (
+            <AccordionItem key={index} value={section.title_en}>
+              <div className="flex flex-col">
+                <div>
+                  <Typography className="py-2 text-gray-400" variant="xs">
+                    {section.title_en}
+                  </Typography>
+                </div>
+                <AccordionTrigger>
+                  <Typography variant="xl">{section.title_ja}</Typography>
+                </AccordionTrigger>
               </div>
-              <AccordionTrigger>
-                <Typography variant="xl">アジャイル開発</Typography>
-              </AccordionTrigger>
-            </div>
-            <AccordionContent>
-              ユーザーやクライアントのニーズを正確に把握した上で、スピード感を持って開発を進めます。
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem
-            value="Domain Driven Design
-"
-          >
-            <div className="flex flex-col">
-              <div>
-                <Typography className="py-2 text-gray-400" variant="xs">
-                  Cloud Integration Support
-                </Typography>
-              </div>
-              <AccordionTrigger>
-                <Typography variant="xl">クラウド導入支援</Typography>
-              </AccordionTrigger>
-            </div>
-            <AccordionContent>
-              ビジネスのワークフロー、プロセス、具体的な要件を理解した上で、クラウドソリューションでシームレスな統合を支援します。
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem
-            value="Cloud Native
-"
-          >
-            <div className="flex flex-col">
-              <div>
-                <Typography className="py-2 text-gray-400" variant="xs">
-                  System Operation Support
-                </Typography>
-              </div>
-              <AccordionTrigger>
-                <Typography variant="xl">システム運用支援</Typography>
-              </AccordionTrigger>
-            </div>
-            <AccordionContent>
-              マイクロサービスアーキテクチャ、アジャイル開発手法、DevOpsの導入をサポートし、組織が変化に迅速に対応できるようにします。
-            </AccordionContent>
-          </AccordionItem>
+              <AccordionContent>{section.description}</AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
       </div>
     </ScrollArea>
