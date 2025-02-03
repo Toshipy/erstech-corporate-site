@@ -7,10 +7,10 @@ import {
 import { Typography } from '@/components/ui/Typography/Typography'
 import { ABOUT, HOME } from '@/contants/routes'
 import type { IOurMissionFields, Section } from '@/types/ourMission'
+import type { IWhoWeAreFields } from '@/types/whoWeAre'
 import type { Entry } from 'contentful'
 import Link from 'next/link'
 import type { FC } from 'react'
-import type { IWhoWeAreFields } from '@/types/whoWeAre'
 
 type Props = {
   whoWeAres: Entry<IWhoWeAreFields>[]
