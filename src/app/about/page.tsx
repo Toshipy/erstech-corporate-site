@@ -6,22 +6,23 @@ import { Team } from '@/components/component/Team/Team'
 import {
   getCompanyAbout,
   getMembers,
-  getOurMissions
+  getOurMissions,
+  getWhoWeAre
 } from '@/lib/contentful/api'
 import React from 'react'
 
 const AboutPage = async () => {
-  const [members, missions, companyAbout] = await Promise.all([
+  const [members, missions, companyAbout, whoWeAres] = await Promise.all([
     getMembers(),
     getOurMissions(),
-    getCompanyAbout()
+    getCompanyAbout(),
+    getWhoWeAre()
   ])
 
-  // const companyAboutFields = companyAbout.map((item) => item.fields)
   return (
     <>
       <Header />
-      <AboutMessage missions={missions} />
+      <AboutMessage whoWeAres={whoWeAres} missions={missions} />
       <CompanyAbout companyAbout={companyAbout} />
       <Team members={members} />
       <Footer />

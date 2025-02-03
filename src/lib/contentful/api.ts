@@ -63,3 +63,11 @@ export async function getCompanyAbout() {
 
   return response.items
 }
+
+export async function getWhoWeAre() {
+  const response = await client.getEntries({
+    content_type: 'whoWeAre'
+  })
+
+  return response.items
+}
