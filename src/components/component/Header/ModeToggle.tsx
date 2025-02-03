@@ -1,9 +1,9 @@
 import { Button } from '@/components/ui/Button/Button'
 import {
   DropdownMenu,
-  DropdownMenuTrigger,
   DropdownMenuContent,
-  DropdownMenuItem
+  DropdownMenuItem,
+  DropdownMenuTrigger
 } from '@/components/ui/DropdownMenu/DropdownMenu'
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'

@@ -55,3 +55,11 @@ export async function getOurMissions() {
 
   return response.items
 }
+
+export async function getCompanyAbout() {
+  const response = await client.getEntries({
+    content_type: 'companyAbout'
+  })
+
+  return response.items
+}

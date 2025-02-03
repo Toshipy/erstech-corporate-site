@@ -1,5 +1,3 @@
-import React from 'react'
-import Link from 'next/link'
 import {
   Accordion,
   AccordionContent,
@@ -9,6 +7,8 @@ import {
 import { ScrollArea } from '@/components/ui/ScrollArea/ScrollArea'
 import { Typography } from '@/components/ui/Typography/Typography'
 import { HOME, SERVICE } from '@/contants/routes'
+import Link from 'next/link'
+import React from 'react'
 
 export const ServiceOffer = () => {
   return (

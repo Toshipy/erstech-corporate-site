@@ -1,4 +1,5 @@
-import React from 'react'
+import { ScrollArea } from '@/components/ui/ScrollArea/ScrollArea'
+import { Typography } from '@/components/ui/Typography/Typography'
 import {
   SiAmazonwebservices,
   SiAtlassian,
@@ -25,8 +26,7 @@ import {
   SiTypescript,
   SiVercel
 } from '@icons-pack/react-simple-icons'
-import { ScrollArea } from '@/components/ui/ScrollArea/ScrollArea'
-import { Typography } from '@/components/ui/Typography/Typography'
+import React from 'react'
 
 export const TechnologyStacks = () => {
   return (

@@ -48,7 +48,7 @@ jobs:
         run: pnpm install
 
       - name: 全チェックを実行
-        run: pnpm run all:check
+        run: make check
 
       - name: node_modulesキャッシュを保存
         if: steps.pnpm-cache.outputs.cache-hit != 'true'

@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import {
   Accordion,
   AccordionContent,
@@ -6,15 +5,17 @@ import {
   AccordionTrigger
 } from '@/components/ui/Accordion/Accordion'
 import { Typography } from '@/components/ui/Typography/Typography'
-import { HOME, ABOUT } from '@/contants/routes'
-import type { Entry } from 'contentful'
+import { ABOUT, HOME } from '@/contants/routes'
 import type { IOurMissionFields, Section } from '@/types/ourMission'
+import type { Entry } from 'contentful'
+import Link from 'next/link'
+import type { FC } from 'react'
 
 type Props = {
   missions: Entry<IOurMissionFields>[]
 }
 
-export const AboutMessage: React.FC<Props> = ({ missions }) => {
+export const AboutMessage: FC<Props> = ({ missions }) => {
   const mission = missions[0]
   if (!mission) {
     return null
