@@ -1,18 +1,18 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuLink
-} from '@radix-ui/react-navigation-menu'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import Link from 'next/link'
 import { Logo } from '@/components/ui/Logo/Logo'
 import { navigationMenuTriggerStyle } from '@/components/ui/NavigationMenu/NavigationMenu'
 import { Typography } from '@/components/ui/Typography/Typography'
-import { HOME, ERSTECH_ROUTES } from '@/contants/routes'
+import { ERSTECH_ROUTES, HOME } from '@/contants/routes'
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList
+} from '@radix-ui/react-navigation-menu'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export const Header = () => {
   const initialValue = 100

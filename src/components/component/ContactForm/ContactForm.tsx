@@ -1,18 +1,19 @@
 'use client'
-import { Loader2 } from 'lucide-react'
-import Link from 'next/link'
-import { Toaster } from 'sonner'
 import { useContactForm } from '@/components/component/ContactForm/useContactForm'
+import { Button } from '@/components/ui/Button/Button'
 import { Form } from '@/components/ui/Form/Form'
 import { ScrollArea } from '@/components/ui/ScrollArea/ScrollArea'
 import { Typography } from '@/components/ui/Typography/Typography'
-import { Button } from '@/components/ui/Button/Button'
+import { CONTACT, HOME } from '@/contants/routes'
+import { Loader2 } from 'lucide-react'
+import Link from 'next/link'
+import type { FC } from 'react'
+import { Toaster } from 'sonner'
 import { InputForm } from '../InputForm/InputForm'
 import { SelectForm } from '../SelectForm/SelectForm'
 import { TextareaForm } from '../TextareaForm/TextareaForm'
-import { HOME, CONTACT } from '@/contants/routes'
 
-export const ContactForm: React.FC = () => {
+export const ContactForm: FC = () => {
   const { form, onSubmit, isSubmitting, isValid, isDirty } = useContactForm()
   return (
     <ScrollArea className="bg-background h-full w-full p-12">

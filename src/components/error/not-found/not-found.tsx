@@ -1,8 +1,8 @@
-import type { FC } from 'react'
-import Link from 'next/link'
-import { Typography } from '@/components/ui/Typography/Typography'
 import { Button } from '@/components/ui/Button/Button'
+import { Typography } from '@/components/ui/Typography/Typography'
 import { HOME } from '@/contants/routes'
+import Link from 'next/link'
+import type { FC } from 'react'
 
 export const NotFound: FC = () => (
   <div className="flex h-screen flex-col items-center justify-center gap-4">

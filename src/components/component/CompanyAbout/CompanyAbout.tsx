@@ -1,12 +1,13 @@
 import { Typography } from '@/components/ui/Typography/Typography'
 import type { ICompanyAboutFields } from '@/types/companyAbout'
 import type { Entry } from 'contentful'
+import type { FC } from 'react'
 
 type CompanyAboutProps = {
   companyAbout: Entry<ICompanyAboutFields>[]
 }
 
-export const CompanyAbout: React.FC<CompanyAboutProps> = ({ companyAbout }) => {
+export const CompanyAbout: FC<CompanyAboutProps> = ({ companyAbout }) => {
   return (
     <div className="flex flex-col items-start justify-between p-12">
       <div className="px-12">

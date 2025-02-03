@@ -1,19 +1,19 @@
 'use client'
 
-import { type FC, useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { Button } from '@/components/ui/Button/Button'
 import {
   Card,
+  CardDescription,
   CardHeader,
-  CardTitle,
-  CardDescription
+  CardTitle
 } from '@/components/ui/Card/Card'
 import { Typography } from '@/components/ui/Typography/Typography'
-import { HOME, CAREERS } from '@/contants/routes'
+import { CAREERS, HOME } from '@/contants/routes'
 import type { IOpenPositionFields } from '@/types/openPosition'
 import type { Entry } from 'contentful'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { type FC, useEffect, useState } from 'react'
 
 type Props = {
   openPositions: Entry<IOpenPositionFields>[]

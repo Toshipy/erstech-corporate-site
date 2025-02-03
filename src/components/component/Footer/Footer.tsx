@@ -2,9 +2,10 @@ import { Logo } from '@/components/ui/Logo/Logo'
 import { Typography } from '@/components/ui/Typography/Typography'
 import { HOME } from '@/contants/routes'
 import Link from 'next/link'
+import type { FC } from 'react'
 import 'remixicon/fonts/remixicon.css'
 
-export const Footer: React.FC = () => {
+export const Footer: FC = () => {
   return (
     <footer className="flex w-full border-t-2 bg-slate-800 px-10 py-4">
       <div className="px-10">

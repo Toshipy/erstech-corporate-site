@@ -1,19 +1,19 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { X } from 'lucide-react'
-import Image from 'next/image'
 import { Typography } from '@/components/ui/Typography/Typography'
 import type { IMemberFields } from '@/types/member'
 import type { Asset } from 'contentful'
 import type { Entry } from 'contentful'
+import { AnimatePresence, motion } from 'framer-motion'
+import { X } from 'lucide-react'
+import Image from 'next/image'
+import React, { FC, useEffect, useState } from 'react'
 
 type Props = {
   members: Entry<IMemberFields>[]
 }
 
-export const Team: React.FC<Props> = ({ members }) => {
+export const Team: FC<Props> = ({ members }) => {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const selectedMember =
     members && members.find(member => member.sys.id === selectedId)

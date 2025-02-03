@@ -1,18 +1,18 @@
-import type { FC } from 'react'
-import React from 'react'
-import { MoveRight } from 'lucide-react'
-import Link from 'next/link'
+import { Button } from '@/components/ui/Button/Button'
 import {
   Card,
+  CardDescription,
   CardHeader,
-  CardTitle,
-  CardDescription
+  CardTitle
 } from '@/components/ui/Card/Card'
 import { Typography } from '@/components/ui/Typography/Typography'
 import { PRODUCTS } from '@/contants/routes'
-import { Button } from '@/components/ui/Button/Button'
 import type { IProductFields } from '@/types/product'
 import type { Entry } from 'contentful'
+import { MoveRight } from 'lucide-react'
+import Link from 'next/link'
+import type { FC } from 'react'
+import React from 'react'
 
 type Props = {
   products: Entry<IProductFields>[]
