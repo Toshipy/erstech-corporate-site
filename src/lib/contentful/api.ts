@@ -7,7 +7,7 @@ export async function getAllProducts() {
   return response.items
 }
 
-export async function getAllMembers() {
+export async function getMembers() {
   const response = await client.getEntries({
     content_type: 'member',
     order: ['sys.createdAt']
@@ -43,6 +43,14 @@ export async function getAllService() {
 export async function getHeroMessage() {
   const response = await client.getEntries({
     content_type: 'heroMessage'
+  })
+
+  return response.items
+}
+
+export async function getOurMissions() {
+  const response = await client.getEntries({
+    content_type: 'ourMission'
   })
 
   return response.items

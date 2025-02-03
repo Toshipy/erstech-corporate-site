@@ -7,8 +7,25 @@ import {
 } from '@/components/ui/Accordion/Accordion'
 import { Typography } from '@/components/ui/Typography/Typography'
 import { HOME, ABOUT } from '@/contants/routes'
+import type { Entry } from 'contentful'
+import type { IOurMissionFields, Section } from '@/types/ourMission'
 
-export const AboutMessage: React.FC = () => {
+type Props = {
+  missions: Entry<IOurMissionFields>[]
+}
+
+export const AboutMessage: React.FC<Props> = ({ missions }) => {
+  const mission = missions[0]
+  if (!mission) {
+    return null
+  }
+
+  const { title, subtitle, section } = mission.fields
+
+  const sections = (Array.isArray(section)
+    ? section
+    : []) as unknown as Section[]
+
   return (
     <div className="p-12">
       <div>
@@ -35,66 +52,34 @@ export const AboutMessage: React.FC = () => {
       </div>
       <div className="relative w-full p-12">
         <Typography className="font-serif text-gray-400" variant="6xl">
-          Our mission
+          {typeof title === 'string' ? title : ''}
         </Typography>
       </div>
       <div className="px-12">
-        <Typography variant="3xl">アイデアをシンプルに表現する</Typography>
+        <Typography variant="3xl">
+          {typeof subtitle === 'string' ? subtitle : ''}
+        </Typography>
       </div>
       <div className="px-12 py-6">
         <Accordion type="multiple">
-          <AccordionItem value="user-centered design">
-            <div className="flex flex-col">
-              <div>
-                <Typography className="py-2 text-gray-400" variant="xs">
-                  User Centered Design
-                </Typography>
+          {sections.map((section, _index) => (
+            <AccordionItem
+              key={section.title_en}
+              value={section.title_en.toLowerCase()}
+            >
+              <div className="flex flex-col">
+                <div>
+                  <Typography className="py-2 text-gray-400" variant="xs">
+                    {section.title_en}
+                  </Typography>
+                </div>
+                <AccordionTrigger>
+                  <Typography variant="xl">{section.title_ja}</Typography>
+                </AccordionTrigger>
               </div>
-              <AccordionTrigger>
-                <Typography variant="xl">ユーザー中心設計</Typography>
-              </AccordionTrigger>
-            </div>
-            <AccordionContent>
-              「アイデアをどのように具現化し、いかにシステムとして実現できるか」を考え、デザインし、ビジネスの成果やプロダクト価値に訴求していくプロダクトにしていきます。
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem
-            value="Domain Driven Design
-"
-          >
-            <div className="flex flex-col">
-              <div>
-                <Typography className="py-2 text-gray-400" variant="xs">
-                  Domain Driven Design
-                </Typography>
-              </div>
-              <AccordionTrigger>
-                <Typography variant="xl">ドメイン駆動設計</Typography>
-              </AccordionTrigger>
-            </div>
-            <AccordionContent>
-              業務の背景、内容、プロセスやフローなどを理解し、抽出された概念(=モデル)をシンプルな「あるべき姿」に練り上げ、それを動くソフトウェアに落とし込むことで、ユーザエクスペリエンスを向上させます。
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem
-            value="Cloud Native
-"
-          >
-            <div className="flex flex-col">
-              <div>
-                <Typography className="py-2 text-gray-400" variant="xs">
-                  Cloud Native
-                </Typography>
-              </div>
-              <AccordionTrigger>
-                <Typography variant="xl">クラウドネイティブ</Typography>
-              </AccordionTrigger>
-            </div>
-            <AccordionContent>
-              クラウドネイティブなアプリケーション開発で、変化に強く、持続可能なアプリケーションを実現します。
-              その仕組みのためのマイクロサービス、アジャイル開発手法、DevOpsといった開発スタイル導入が可能です。
-            </AccordionContent>
-          </AccordionItem>
+              <AccordionContent>{section.description}</AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
       </div>
     </div>

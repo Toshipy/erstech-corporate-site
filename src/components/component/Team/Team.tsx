@@ -10,13 +10,13 @@ import type { Asset } from 'contentful'
 import type { Entry } from 'contentful'
 
 type Props = {
-  teamMembers: Entry<IMemberFields>[]
+  members: Entry<IMemberFields>[]
 }
 
-export const Team: React.FC<Props> = ({ teamMembers }) => {
+export const Team: React.FC<Props> = ({ members }) => {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const selectedMember =
-    teamMembers && teamMembers.find(member => member.sys.id === selectedId)
+    members && members.find(member => member.sys.id === selectedId)
 
   useEffect(() => {
     if (selectedId) {
@@ -45,8 +45,8 @@ export const Team: React.FC<Props> = ({ teamMembers }) => {
         <Typography variant="3xl">Team</Typography>
       </div>
       <div className="grid grid-cols-1 justify-items-center sm:grid-cols-3 md:grid-cols-3">
-        {teamMembers &&
-          teamMembers.map((member, _index) => (
+        {members &&
+          members.map((member, _index) => (
             <motion.div
               className="flex w-[300px] flex-col items-center rounded-lg bg-gray-100 p-4"
               key={member.sys.id}
