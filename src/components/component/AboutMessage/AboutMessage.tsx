@@ -7,17 +7,20 @@ import {
 import { Typography } from '@/components/ui/Typography/Typography'
 import { ABOUT, HOME } from '@/contants/routes'
 import type { IOurMissionFields, Section } from '@/types/ourMission'
+import type { IWhoWeAreFields } from '@/types/whoWeAre'
 import type { Entry } from 'contentful'
 import Link from 'next/link'
 import type { FC } from 'react'
 
 type Props = {
+  whoWeAres: Entry<IWhoWeAreFields>[]
   missions: Entry<IOurMissionFields>[]
 }
 
-export const AboutMessage: FC<Props> = ({ missions }) => {
+export const AboutMessage: FC<Props> = ({ whoWeAres, missions }) => {
   const mission = missions[0]
-  if (!mission) {
+  const whoWeAre = whoWeAres[0]
+  if (!mission || !whoWeAre) {
     return null
   }
 
@@ -38,17 +41,17 @@ export const AboutMessage: FC<Props> = ({ missions }) => {
       </div>
       <div className="relative w-full p-12">
         <Typography className="font-serif text-gray-400" variant="6xl">
-          Who we are
+          {whoWeAre.fields.title?.toString()}
         </Typography>
       </div>
       <div className="px-12">
         <Typography variant="3xl">
-          人々の体験に新しい価値を提供します。
+          {whoWeAre.fields.subtitle?.toString()}
         </Typography>
       </div>
       <div className="p-12">
         <Typography variant="lg">
-          クライアントが抱えている問題から背景を深く理解し、ビジネスの本質、業界について探究します。分析を踏まえ、使いやすくシンプルなデザインをソフトウェアで実現し、クライアントの成長につながる新たな価値を提供します。
+          {whoWeAre.fields.description?.toString()}
         </Typography>
       </div>
       <div className="relative w-full p-12">
