@@ -1,7 +1,7 @@
-import React from 'react'
 import { Footer } from '@/components/component/Footer/Footer'
-import { Products } from '@/components/component/Products/Products'
 import { Header } from '@/components/component/Header/Header'
+import { Products } from '@/components/component/Products/Products'
+import React from 'react'
 
 const ProductPage = () => {
   return (

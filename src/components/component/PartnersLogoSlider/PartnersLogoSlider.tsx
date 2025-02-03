@@ -6,9 +6,9 @@ import {
   CarouselItem
 } from '@/components/ui/Carousel/Carousel'
 import { Typography } from '@/components/ui/Typography/Typography'
-import Autoplay from 'embla-carousel-autoplay'
-import type { Asset, Entry } from 'contentful'
 import type { IPartnerFields } from '@/types/partner'
+import type { Asset, Entry } from 'contentful'
+import Autoplay from 'embla-carousel-autoplay'
 import type { FC } from 'react'
 
 type Props = {

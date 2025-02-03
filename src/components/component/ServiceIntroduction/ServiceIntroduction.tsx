@@ -1,13 +1,13 @@
 'use client'
-import type { FC } from 'react'
+import { Button } from '@/components/ui/Button/Button'
+import { Typography } from '@/components/ui/Typography/Typography'
+import { SERVICE } from '@/contants/routes'
+import type { IServiceFields } from '@/types/service'
+import type { Entry } from 'contentful'
 import { motion } from 'framer-motion'
 import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
-import { Typography } from '@/components/ui/Typography/Typography'
-import { SERVICE } from '@/contants/routes'
-import { Button } from '@/components/ui/Button/Button'
-import type { Entry } from 'contentful'
-import type { IServiceFields } from '@/types/service'
+import type { FC } from 'react'
 
 type Props = {
   service: Entry<IServiceFields>[]

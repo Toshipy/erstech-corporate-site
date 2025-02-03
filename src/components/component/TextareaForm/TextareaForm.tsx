@@ -1,12 +1,12 @@
 import {
+  FormControl,
   FormField,
   FormItem,
-  FormControl,
   FormMessage
 } from '@/components/ui/Form/Form'
 import { Textarea } from '@/components/ui/Textarea/Textarea'
 import { Typography } from '@/components/ui/Typography/Typography'
-import type { FieldPath, Control, FieldValues } from 'react-hook-form'
+import type { Control, FieldPath, FieldValues } from 'react-hook-form'
 
 type FormFieldProps<TFieldValues extends FieldValues> = {
   control: Control<TFieldValues>

@@ -1,11 +1,11 @@
-import React, { type FC } from 'react'
-import { MoveRight } from 'lucide-react'
-import Link from 'next/link'
+import { Button } from '@/components/ui/Button/Button'
 import { Typography } from '@/components/ui/Typography/Typography'
 import { ABOUT } from '@/contants/routes'
-import { Button } from '@/components/ui/Button/Button'
-import type { Entry } from 'contentful'
 import type { IHeroMessageFields } from '@/types/heroMessage'
+import type { Entry } from 'contentful'
+import { MoveRight } from 'lucide-react'
+import Link from 'next/link'
+import React, { type FC } from 'react'
 
 type Props = {
   message: Entry<IHeroMessageFields>[]

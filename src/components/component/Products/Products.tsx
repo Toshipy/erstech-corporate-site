@@ -1,17 +1,17 @@
-import React from 'react'
-import type { NextPage } from 'next'
-import Link from 'next/link'
-import { getAllProducts } from '@/lib/contentful/api'
-import type { IProductFields } from '@/types/product'
-import type { Entry } from 'contentful'
 import {
   Card,
+  CardDescription,
   CardHeader,
-  CardTitle,
-  CardDescription
+  CardTitle
 } from '@/components/ui/Card/Card'
 import { Typography } from '@/components/ui/Typography/Typography'
 import { HOME, PRODUCTS } from '@/contants/routes'
+import { getAllProducts } from '@/lib/contentful/api'
+import type { IProductFields } from '@/types/product'
+import type { Entry } from 'contentful'
+import type { NextPage } from 'next'
+import Link from 'next/link'
+import React from 'react'
 
 type Props = {
   products: Entry<IProductFields>[]

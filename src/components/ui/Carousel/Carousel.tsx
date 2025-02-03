@@ -1,12 +1,13 @@
 'use client'
 
-import * as React from 'react'
+import { Button } from '@/components/ui/Button/Button'
+import { cn } from '@/lib/utils'
+import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons'
 import useEmblaCarousel, {
   type UseEmblaCarouselType
 } from 'embla-carousel-react'
-import { cn } from '@/lib/utils'
-import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons'
-import { Button } from '@/components/ui/Button/Button'
+import * as React from 'react'
+import { useEffect } from 'react'
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -97,7 +98,7 @@ const Carousel = React.forwardRef<
       [scrollPrev, scrollNext]
     )
 
-    React.useEffect(() => {
+    useEffect(() => {
       if (!api || !setApi) {
         return
       }
@@ -105,7 +106,7 @@ const Carousel = React.forwardRef<
       setApi(api)
     }, [api, setApi])
 
-    React.useEffect(() => {
+    useEffect(() => {
       if (!api) {
         return
       }

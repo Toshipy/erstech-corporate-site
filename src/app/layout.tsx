@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Script from 'next/script'
 import { ThemeProvider } from '@/components/ui/ThemeProvider/ThemeProvider'
 import { Toaster } from '@/components/ui/Toast/Toaster'
+import Script from 'next/script'
+import { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: 'Erstech corporate-site'
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>) {
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID
   return (
@@ -22,20 +23,17 @@ export default function RootLayout({
           src={`"https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}"`}
           strategy="afterInteractive"
         />
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', '${GA_MEASUREMENT_ID}', {
                 page_path: window.location.pathname,
               });
-            `
-          }}
-          id="gtag-init"
-          strategy="afterInteractive"
-        />
+          `}
+          id="gtag-init" strategy="afterInteractive"
+        </Script>
       </head>
       <body className="flex flex-col min-h-screen">
         <ThemeProvider
